@@ -203,7 +203,7 @@ descEditorOptions:
   message: >-
     Επιλογές για το CodeMirror και για πρόσθετα σε αντικείμενα JSON, όπως το
     <code>{"indentUnit":2, "smartIndent":true}</code>. Μερικές από τις επιλογές
-    ενδέχεται να μη λειτουργούν με το Violentmonkey. Δείτε <a
+    ενδέχεται να μη λειτουργούν με το Automation Script. Δείτε <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">την πλήρη λίστα εδώ</a>.
 descEditorOptionsGeneric:
@@ -299,16 +299,16 @@ extDescription:
     υποστήριξη για πολλά διαφορετικά προγράμματα περιήγησης
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Αποκλεισμένη από τις ρυθμίσεις του Violentmonkey
+  message: Αποκλεισμένη από τις ρυθμίσεις του Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Το Violentmonkey δεν μπορεί να εκτελέσει  userscripts σε αυτήν τη σελίδα
+    Το Automation Script δεν μπορεί να εκτελέσει  userscripts σε αυτήν τη σελίδα
 
     (πιθανότατα βρίσκεστε σε μία από τις εξής σελίδες: σελίδα διεπαφής του
     προγράμματος περιήγησης, σελίδα μιας επέκτασης, σελίδα αποκλεισμένη από
@@ -317,17 +317,17 @@ failureReasonNoninjectable:
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Έγινε επανεκκίνηση του Violentmonkey. Παρακαλούμε επαναφορτώστε την καρτέλα
+    Έγινε επανεκκίνηση του Automation Script. Παρακαλούμε επαναφορτώστε την καρτέλα
     προκειμένου να εκτελεστούν τα userscripts.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Υπάρχουν πολλοί τρόποι να εγκαταστήσετε ή να παρακολουθήσετε τις αλλαγές σε
     ένα τοπικό αρχείο: <1>Μεταφέρετε και αποθέστε το αρχείο σε μία ανοιχτή
-    σελίδα του Violentmonkey, όπως αυτή εδώ. <2>Εγκαταστήστε έναν τοπικό
+    σελίδα του Automation Script, όπως αυτή εδώ. <2>Εγκαταστήστε έναν τοπικό
     διακομιστή HTTP για αυτό το αρχείο και ανοίξτε τον μέσω της διεύθυνσης URL
     http://localhost. <3>Μεταβείτε στη σελίδα chrome://extensions, κάντε κλικ
-    στο κουμπί «Λεπτομέρειες» κάτω από την επέκταση Violentmonkey και στη
+    στο κουμπί «Λεπτομέρειες» κάτω από την επέκταση Automation Script και στη
     συνέχεια ενεργοποιήστε την επιλογή «Να επιτρέπεται η πρόσβαση σε διευθύνσεις
     URL αρχείων». Σημειώνουμε, πάντως, πως η ενεργοποίηση αυτής της ρύθμισης
     είναι επικίνδυνη επειδή δίνει σε κάθε userscript τη δυνατότητα ανάγνωσης
@@ -437,7 +437,7 @@ installOptionTrackTooltip:
     εκδόσεις του Firefox (68 και εξής).
 labelAbout:
   description: Label shown on top of the about page.
-  message: Περί του Violentmonkey
+  message: Περί του Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

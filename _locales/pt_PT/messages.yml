@@ -190,7 +190,7 @@ descEditorOptions:
   message: >-
     Opções personalizadas para o CodeMirror e seus addons em formato JSON, tais
     como: {"indentUnit":2, "smartIndent":true}. No entanto, tenha em atenção que
-    algumas poderão não funcionar com o Violentmonkey. Lista completa:
+    algumas poderão não funcionar com o Automation Script. Lista completa:
     https://codemirror.net/doc/manual.html#config
 descEditorOptionsGeneric:
   description: Description of editor options in VM settings.
@@ -262,16 +262,16 @@ extDescription:
   message: Oferece suporte a scripts de utilizador para navegadores.
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Na lista negra nas definições do Violentmonkey
+  message: Na lista negra nas definições do Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: |-
-    O Violentmonkey não pode executar scripts de utilizador nesta página
+    O Automation Script não pode executar scripts de utilizador nesta página
     (exemplos comuns: interface do navegador ou uma extensão)
 failureReasonRestarted:
   description: Shown in the popup.
@@ -378,7 +378,7 @@ installOptionTrackTooltip:
   message: ''
 labelAbout:
   description: Label shown on top of the about page.
-  message: Acerca do Violentmonkey
+  message: Acerca do Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

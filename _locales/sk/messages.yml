@@ -198,7 +198,7 @@ descEditorOptions:
   message: >-
     Vlastné možnosti pre CodeMirror a doplnky v JSON objekte ako
     <code>{"indentUnit":2, "smartIndent":true}</code> avšak niektoré z nich
-    nemusia byť funkčné vo Violentmonkey. Pozri <a
+    nemusia byť funkčné vo Automation Script. Pozri <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">celý zoznam</a>.
 descEditorOptionsGeneric:
@@ -227,7 +227,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    Repozitár už musí existovať  Violentmonkey ho za vás nikdy nevytvorí ani
+    Repozitár už musí existovať  Automation Script ho za vás nikdy nevytvorí ani
     neinicializuje.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -291,38 +291,38 @@ extDescription:
     prehliadačov
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Na čiernej listine v nastaveniach Violentmonkey
+  message: Na čiernej listine v nastaveniach Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey nemôže spustiť skripty na tejto stránke
+    Automation Script nemôže spustiť skripty na tejto stránke
 
     (najčastejší prípad: rozhranie prehliadača alebo rozšírenia, blokované cez
     politiku, web vyhľadávača v Opere)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey sa reštartoval. Ak chcete spustiť používateľské skripty, znova
+    Automation Script sa reštartoval. Ak chcete spustiť používateľské skripty, znova
     načítajte kartu.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Existuje niekoľko metód na inštaláciu alebo sledovanie úprav v lokálnom
     súbore: <1> Pretiahnite súbor do otvorenej stránky alebo vyskakovacieho okna
-    Violentmonkey, vrátane tejto. <2> Nainštalujte lokálny HTTP server pre tento
+    Automation Script, vrátane tejto. <2> Nainštalujte lokálny HTTP server pre tento
     súbor a otvorte ho cez stránku http://localhost. <3> V podrobnostiach pre
-    Violentmonkey na stránke chrome://extensions povoľte možnosť "Povoliť
+    Automation Script na stránke chrome://extensions povoľte možnosť "Povoliť
     prístup k webovým adresám súboru". Je to nebezpečné, pretože akýkoľvek
     používateľský skript môže čítať akýkoľvek lokálny súbor.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    Otvorte "about:addons", kliknite na položku "Violentmonkey", kliknite na
+    Otvorte "about:addons", kliknite na položku "Automation Script", kliknite na
     "Oprávnenia a údaje" a aktivujte možnosť "Prístup k lokálnym súborom v
     počítači".
 filterAlphabeticalOrder:
@@ -430,7 +430,7 @@ installOptionTrackTooltip:
   message: Karta so zdrojovým súborom by mala byť otvorená vo Firefoxe 68 a novšom.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Informácie o Violentmonkey
+  message: Informácie o Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -575,7 +575,7 @@ labelFirefoxPatchCspHint:
     in Advanced settings.
   message: >-
     Pridá náhodnú hodnotu do CSP webových stránok, ktorú môže na spúšťanie
-    skriptov v režime injektovania $1 využiť iba Violentmonkey; v opačnom
+    skriptov v režime injektovania $1 využiť iba Automation Script; v opačnom
     prípade je potrebné skripty upraviť, aby mohli byť použité $2.
 labelFirefoxPatchCspPopup:
   description: >-
@@ -1063,7 +1063,7 @@ msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
   message: >-
     Na dokončenie aktualizácie z verzie $1 na verziu $2, je potrebné reštartovať
-    Violentmonkey.
+    Automation Script.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
   message: ' (kód je rovnaký)'
@@ -1239,7 +1239,7 @@ searchUseRegex:
   message: Použiť regulárne výrazy
 sideMenuAbout:
   description: 'Side menu: About'
-  message: O Violentmonkey
+  message: O Automation Script
 sideMenuInstalled:
   description: 'Side menu: Installed scripts'
   message: Nainštalované skripty
@@ -1350,7 +1350,7 @@ updateScriptsInTab:
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
-    V podrobnostiach rozšírenia Violentmonkey na stránke chrome://extensions
+    V podrobnostiach rozšírenia Automation Script na stránke chrome://extensions
     povoľte možnosť "Povoliť skripty používateľa" a obnovte kartu
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.

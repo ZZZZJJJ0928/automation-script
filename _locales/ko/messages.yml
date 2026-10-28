@@ -189,7 +189,7 @@ descEditorOptions:
   description: Description of editor options JSON section.
   message: >-
     CodeMirror와 애드온의 설정은 <code>{"indentUnit":2, "smartIndent":true}</code> 와 같은
-    JSON 오브젝트로 할 수 있으며 몇몇 설정은 Violentmonkey 에서 작동하지 않을 수 있습니다. <a
+    JSON 오브젝트로 할 수 있으며 몇몇 설정은 Automation Script 에서 작동하지 않을 수 있습니다. <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">전체 목록</a>을 확인하세요.
 descEditorOptionsGeneric:
@@ -214,7 +214,7 @@ descSyncGitRepoPreexisting:
   description: >-
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
-  message: 저장소가 이미 존재해야 합니다 — Violentmonkey는 저장소를 자동으로 생성하거나 초기화하지 않습니다.
+  message: 저장소가 이미 존재해야 합니다 — Automation Script는 저장소를 자동으로 생성하거나 초기화하지 않습니다.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
   message: 그룹
@@ -272,31 +272,31 @@ extDescription:
   message: 유저스크립트를 실행합니다.
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Violentmonkey 블랙리스트 목록에 추가되어 있습니다
+  message: Automation Script 블랙리스트 목록에 추가되어 있습니다
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: |-
-    Violentmonkey가 이 페이지의 유저스크립트를 실행하지 못했습니다
+    Automation Script가 이 페이지의 유저스크립트를 실행하지 못했습니다
     (대표적인 원인 예시: 브라우저 UI, 확장 기능, 정책, Opera 내 검색엔진 사이트)
 failureReasonRestarted:
   description: Shown in the popup.
-  message: Violentmonkey가 재시작되었습니다. 유저스크립트를 실행하려면 탭을 새로고침하세요.
+  message: Automation Script가 재시작되었습니다. 유저스크립트를 실행하려면 탭을 새로고침하세요.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
-    로컬 파일의 변경사항을 적용하거나 추적하는 방법이 몇 가지 있습니다. <1> 파일을 이 페이지처럼 열려 있는 Violentmonkey
+    로컬 파일의 변경사항을 적용하거나 추적하는 방법이 몇 가지 있습니다. <1> 파일을 이 페이지처럼 열려 있는 Automation Script
     페이지나 팝업으로 끌어다 놓습니다. <2> 이 파일의 로컬 HTTP 서버를 설치한 뒤 http://localhost 주소로 파일을
     엽니다. <3> chrome://extensions 페이지의 확장 세부정보에서 "파일 URL에 대한 액세스 허용"을 켭니다. 이 방식은
     모든 유저스크립트에서 모든 파일에 접근할 수 있게 되므로 위험합니다.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    about:addons 페이지를 열고 "Violentmonkey"와 "권한 및 데이터"를 순서대로 클릭한 후, "컴퓨터의 로컬 파일
+    about:addons 페이지를 열고 "Automation Script"와 "권한 및 데이터"를 순서대로 클릭한 후, "컴퓨터의 로컬 파일
     접근"을 활성화하세요.
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -397,7 +397,7 @@ installOptionTrackTooltip:
   message: 소스 파일 탭은 Firefox 68 이상에서 열린 상태로 유지되어야 합니다.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Violentmonkey에 대해서
+  message: Automation Script에 대해서
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -539,7 +539,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    웹페이지의 CSP에 무작위 값을 추가하여 Violentmonkey가 $1 주입 모드에서 스크립트를 실행할 수 있게 합니다. 그렇지 않으면
+    웹페이지의 CSP에 무작위 값을 추가하여 Automation Script가 $1 주입 모드에서 스크립트를 실행할 수 있게 합니다. 그렇지 않으면
     스크립트를 수정하여 $2을(를) 사용해야 합니다.
 labelFirefoxPatchCspPopup:
   description: >-
@@ -1006,7 +1006,7 @@ msgReinstallScripts:
   message: 스크립트를 재설치하거나 다시 저장하세요.
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
-  message: $1에서 $2(으)로 업데이트를 완료하려면 Violentmonkey를 다시 시작해야 합니다.
+  message: $1에서 $2(으)로 업데이트를 완료하려면 Automation Script를 다시 시작해야 합니다.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
   message: ' (변경 없음)'
@@ -1266,7 +1266,7 @@ updateScriptsInTab:
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
-    chrome://extensions 페이지에서 Violentmonkey의 세부정보로 들어간 뒤 '사용자 스크립트 허용'을 활성화하고 탭을
+    chrome://extensions 페이지에서 Automation Script의 세부정보로 들어간 뒤 '사용자 스크립트 허용'을 활성화하고 탭을
     새로고침해 주세요.
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.

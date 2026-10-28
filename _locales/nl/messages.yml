@@ -196,7 +196,7 @@ descEditorOptions:
   message: >-
     Aangepaste instellingen voor CodeMirror en uitbreidingen in json-objecten,
     zoals <code>{"indentUnit":2, "smartIndent":true}</code>. Let op: niet alle
-    werken gegarandeerd in Violentmonkey. Bekijk de <a
+    werken gegarandeerd in Automation Script. Bekijk de <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">volledige lijst</a>.
 descEditorOptionsGeneric:
@@ -286,32 +286,32 @@ extDescription:
   message: Een open source gebruikersscriptbeheerder voor diverse webbrowsers
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Staat op Violentmonkey's zwarte lijst
+  message: Staat op Automation Script's zwarte lijst
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey kan geen gebruikersscripts uitvoeren op deze pagina
+    Automation Script kan geen gebruikersscripts uitvoeren op deze pagina
 
     (bijv. interne of extensiepagina's, of vanwege een blokkadebeleid of
     bepaalde Opera-zoekmachine)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey is opnieuw opgestart. Laad het tabblad opnieuw om
+    Automation Script is opnieuw opgestart. Laad het tabblad opnieuw om
     gebruikersscripts uit te voeren.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Er zijn verschillende manieren op bewerkingen in een lokaal bestand op te
     nemen of bij te houden: <1> Sleep het bestand naar een geopende
-    Violentmonkey-pagina of -pop-up, zoals deze. <2> Installeer een lokale
+    Automation Script-pagina of -pop-up, zoals deze. <2> Installeer een lokale
     http-server voor dit bestand en open via http://localhost. <3> Schakel
-    toegang tot bestands-url's in voor Violentmonkey op chrome://extensions. Let
+    toegang tot bestands-url's in voor Automation Script op chrome://extensions. Let
     op: dit wordt afgeraden, omdat elk gebruikersscript lokale bestanden kan
     uitlezen.
 fileInstallBlockedFF:
@@ -418,7 +418,7 @@ installOptionTrackTooltip:
   message: In Firefox 68 en nieuwer moet het brontabblad geopend blijven.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Over Violentmonkey
+  message: Over Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -1336,5 +1336,5 @@ valueLabelValueString:
   message: $1 tekenreeks
 visitWebsite:
   description: Label for link to open Violentmonkey website.
-  message: Violentmonkey-website
+  message: Automation Script-website
   touched: false

@@ -1,6 +1,6 @@
 {
-  "name": "violentmonkey",
-  "description": "Violentmonkey",
+  "name": "automation-script",
+  "description": "Automation Script — a userscript manager based on Violentmonkey",
   "version": "2.49.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -104,12 +104,12 @@
   "author": "Gerald <i@gerald.top>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/violentmonkey/violentmonkey.git"
+    "url": "https://github.com/ZZZZJJJ0928/automation-script.git"
   },
   "bugs": {
-    "url": "https://github.com/violentmonkey/violentmonkey/issues"
+    "url": "https://github.com/ZZZZJJJ0928/automation-script/issues"
   },
-  "homepage": "https://github.com/violentmonkey/violentmonkey",
+  "homepage": "https://github.com/ZZZZJJJ0928/automation-script",
   "license": "MIT",
   "dependencies": {
     "@usync/drive": "^0.3.2",
@@ -129,10 +129,14 @@
   },
   "packageManager": "pnpm@12.13.0+sha512.1e55719bf26e809dce5c5084fdebaa64efb3da9038ae5d68a9f8a68311f1a45841c8c3b76a37298c3b66f6bcc80409a9b7f33c78a7168a3e90fb65a5d8235ae4",
   "jest": {
+    "roots": [
+      "<rootDir>/test"
+    ],
     "setupFilesAfterEnv": [
       "./test/mock/index.js"
     ],
     "testEnvironment": "./test/mock/env.js"
   },
-  "beta": 6
+  "beta": 6,
+  "private": true
 }

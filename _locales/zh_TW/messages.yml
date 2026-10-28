@@ -189,7 +189,7 @@ descEditorOptions:
   description: Description of editor options JSON section.
   message: >-
     CodeMirror 和外掛程式的自訂選項，使用 JSON 物件進行設定，例如 <code>{"indentUnit":2,
-    "smartIndent":true}</code>。請注意， 某些選項在 Violentmonkey 中可能無法運作。詳細的選項，請參考<a
+    "smartIndent":true}</code>。請注意， 某些選項在 Automation Script 中可能無法運作。詳細的選項，請參考<a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">完整清單</a>。
 descEditorOptionsGeneric:
@@ -271,28 +271,28 @@ extDescription:
   message: 開放原始碼且支援多種瀏覽器的使用者腳本管理器
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: 在 Violentmonkey 的設定中被列入黑名單
+  message: 在 Automation Script 的設定中被列入黑名單
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: |-
-    Violentmonkey 無法在此頁面執行使用者腳本
+    Automation Script 無法在此頁面執行使用者腳本
 
     （常見情形可能是由於頁面屬於瀏覽器的使用者介面、擴充功能、被安全政策封鎖，
     或者是 Opera 瀏覽器中的搜尋引擎網站）
 failureReasonRestarted:
   description: Shown in the popup.
-  message: Violentmonkey 已經重新啟動。請重新載入分頁以執行使用者腳本。
+  message: Automation Script 已經重新啟動。請重新載入分頁以執行使用者腳本。
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
-    您可以使用以下幾種方法來安裝或追蹤本機檔案的編輯：<1> 直接將檔案拖放到已開啟的 Violentmonkey 頁面或彈出視窗中， 包含這個視窗。
+    您可以使用以下幾種方法來安裝或追蹤本機檔案的編輯：<1> 直接將檔案拖放到已開啟的 Automation Script 頁面或彈出視窗中， 包含這個視窗。
     <2> 為該檔案架設一個本機 HTTP 伺服器，然後透過 http://localhost 的網址來存取它。 <3> 透過 Chrome
-    瀏覽器的「擴充功能」頁面 chrome://extensions，啟用 Violentmonkey 的「允許存取檔案網址」。請注意，此操作具有風險，
+    瀏覽器的「擴充功能」頁面 chrome://extensions，啟用 Automation Script 的「允許存取檔案網址」。請注意，此操作具有風險，
     因為這將允許所有使用者腳本讀取您電腦上的任何檔案。
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
@@ -393,7 +393,7 @@ installOptionTrackTooltip:
   message: 在 Firefox 68 和更新版本中，原始碼檔案的分頁應保持開啟。
 labelAbout:
   description: Label shown on top of the about page.
-  message: 關於 Violentmonkey
+  message: 關於 Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

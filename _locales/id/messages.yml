@@ -196,7 +196,7 @@ descEditorOptions:
   message: >-
     Opsi khusus untuk CodeMirror dan addon di dalam obyek JSON seperti
     <code>{"indentUnit":2, "smartIndent":true}</code> meskipun demikian beberapa
-    diantaranya mungkin tidak bisa digunakan di Violentmonkey. Lihat <a
+    diantaranya mungkin tidak bisa digunakan di Automation Script. Lihat <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">daftar lengkap</a>. Untuk menggunakan tema
     CodeMirror khusus, tulis nama berkasnya di sini <code>"theme":
@@ -283,21 +283,21 @@ extDescription:
   message: Pengelola userscript sumber terbuka yang mendukung banyak peramban
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Dalam daftar hitam di pengaturan Violentmonkey
+  message: Dalam daftar hitam di pengaturan Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: |-
-    Violentmonkey tidak bisa menjalankan userscript di halaman ini
+    Automation Script tidak bisa menjalankan userscript di halaman ini
     (contoh: UI peramban atau ekstensi)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey telah dimulai ulang. Silakan muat ulang tab untuk menjalankan
+    Automation Script telah dimulai ulang. Silakan muat ulang tab untuk menjalankan
     skrip.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
@@ -403,7 +403,7 @@ installOptionTrackTooltip:
   message: Tab sumber berkas harus tetap terbuka di Firefox 68 dan terbaru.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Tentang Violentmonkey
+  message: Tentang Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

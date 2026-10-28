@@ -120,7 +120,7 @@ function connect({ port, token }) {
     host: HOST,
     port,
     token,
-    info: { name: 'Violentmonkey', version: __.VM_VER },
+    info: { name: 'Automation Script', version: __.VM_VER },
   });
   registerTools(client);
   client.on('status', (s) => {

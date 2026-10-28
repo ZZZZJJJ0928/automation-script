@@ -200,7 +200,7 @@ descEditorOptions:
   message: >-
     Прилагођене опције за CodeMirror и додатке у JSON објекту као што је
     <code>{"indentUnit":2, "smartIndent":true}</code>, међутим, имајте на уму да
-    неке од њих можда неће радити у Violentmonkey. Погледајте <a
+    неке од њих можда неће радити у Automation Script. Погледајте <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">целу листу</a>.
 descEditorOptionsGeneric:
@@ -281,22 +281,22 @@ extDescription:
   message: Менаџер корисничких скрипти отвореног кода који подржава много претраживача
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Стављено на црну листу у подешавањима Violentmonkey-а.
+  message: Стављено на црну листу у подешавањима Automation Script-а.
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey не може да покрене корисничке скрипте на овој страници (чести
+    Automation Script не може да покрене корисничке скрипте на овој страници (чести
     примери: кориснички интерфејс претраживача, додатак, блокирано политиком,
     сајт за претрагу у Opera-у).
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey је поново покренут. Поново учитајте картицу да бисте покренули
+    Automation Script је поново покренут. Поново учитајте картицу да бисте покренули
     корисничке скрипте.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
@@ -404,7 +404,7 @@ installOptionTrackTooltip:
     верзијама.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Информације о Violentmonkey
+  message: Информације о Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

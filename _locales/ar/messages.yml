@@ -198,7 +198,7 @@ descEditorOptions:
   message: >-
     خيارات مخصصة لـ CodeMirror والإضافات الخاصة به بصيغة كائن JSON مثل
     <code>{"indentUnit":2, "smartIndent":true}</code>، مع ملاحظة أن بعضها قد لا
-    يعمل في Violentmonkey. راجع <a
+    يعمل في Automation Script. راجع <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">القائمة الكاملة</a>.
 descEditorOptionsGeneric:
@@ -227,7 +227,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    يجب أن يكون المستودع موجودًا بالفعل — لا يقوم Violentmonkey أبدًا بإنشائه أو
+    يجب أن يكون المستودع موجودًا بالفعل — لا يقوم Automation Script أبدًا بإنشائه أو
     تهيئته نيابةً عنك.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -288,37 +288,37 @@ extDescription:
   message: مدير سكربتات مفتوح المصدر يدعم العديد من المتصفحات
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: موجود في قائمة الحظر في إعدادات Violentmonkey
+  message: موجود في قائمة الحظر في إعدادات Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    لا يمكن لـ Violentmonkey تشغيل سكربتات المستخدم في هذه الصفحة
+    لا يمكن لـ Automation Script تشغيل سكربتات المستخدم في هذه الصفحة
 
     (أمثلة شائعة: واجهة المتصفح، إضافة، محظور عبر سياسات، موقع محرك بحث في
     Opera)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    تم إعادة تشغيل Violentmonkey. يُرجى إعادة تحميل علامة التبويب لتشغيل سكربتات
+    تم إعادة تشغيل Automation Script. يُرجى إعادة تحميل علامة التبويب لتشغيل سكربتات
     المستخدم.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     توجد عدة طرق لتثبيت ملف محلي أو تتبع تعديلاته: <1> اسحب الملف وأفلته في صفحة
-    Violentmonkey المفتوحة أو في النافذة المنبثقة، بما في ذلك هذه الصفحة. <2> قم
+    Automation Script المفتوحة أو في النافذة المنبثقة، بما في ذلك هذه الصفحة. <2> قم
     بتشغيل خادم HTTP محلي لهذا الملف وافتحه عبر http://localhost. <3> فعّل خيار
-    "السماح بالوصول إلى عناوين الملفات" في صفحة تفاصيل Violentmonkey في
+    "السماح بالوصول إلى عناوين الملفات" في صفحة تفاصيل Automation Script في
     chrome://extensions. هذا الخيار خطير لأن أي سكربت مستخدم قد يقرأ أي ملف
     محلي.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    افتح صفحة about:addons، انقر فوق "Violentmonkey"، انقر فوق "الأذونات
+    افتح صفحة about:addons، انقر فوق "Automation Script"، انقر فوق "الأذونات
     والبيانات"، وقم بتمكين "الوصول إلى الملفات المحلية على جهاز الكمبيوتر الخاص
     بك".
 filterAlphabeticalOrder:
@@ -566,7 +566,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    يُضيف قيمة عشوائية إلى CSP لصفحات الويب، لا يمكن لـ Violentmonkey استخدامها
+    يُضيف قيمة عشوائية إلى CSP لصفحات الويب، لا يمكن لـ Automation Script استخدامها
     إلا لتشغيل السكربتات في وضع الحقن،$1 وإلا فسيكون من الضروري تعديل السكربتات
     لاستخدام $2.
 labelFirefoxPatchCspPopup:
@@ -1054,7 +1054,7 @@ msgReinstallScripts:
   message: 'يرجى إعادة الحفظ أو إعادة تثبيت هذه السكربتات:'
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
-  message: يجب إعادة تشغيل Violentmonkey لإكمال التحديث من$1 إلى $2.
+  message: يجب إعادة تشغيل Automation Script لإكمال التحديث من$1 إلى $2.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
   message: ' (الكود نفسه)'
@@ -1324,7 +1324,7 @@ updateScriptsInTab:
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
-    يرجى تمكين "السماح بسكربتات المستخدم" في تفاصيل Violentmonkey عبر
+    يرجى تمكين "السماح بسكربتات المستخدم" في تفاصيل Automation Script عبر
     chrome://extensions وإعادة تحميل علامة التبويب.
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.

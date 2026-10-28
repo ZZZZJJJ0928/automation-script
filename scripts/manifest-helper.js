@@ -1,6 +1,6 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
-const { getVersion, isBeta } = require('./version-helper');
+const { getVersion } = require('./version-helper');
 const { MV3, isProd } = require('./common');
 
 function getBrowserTargets() {
@@ -47,12 +47,6 @@ function buildManifest(base) {
     if (!MV3) {
       data.update_url = 'https://raw.githubusercontent.com/violentmonkey/violentmonkey/updates/updates-crx.xml';
     }
-  }
-  if (isBeta()) {
-    // Do not support i18n in beta version
-    const name = 'Violentmonkey BETA';
-    data.name = name;
-    data[MV3 ? 'action' : 'browser_action'].default_title = name;
   }
   return data;
 }

@@ -200,7 +200,7 @@ descEditorOptions:
   message: >-
     Opciones personalizadas para CodeMirror y complementos en objetos JSON como
     <code>{"indentUnit":2, "smartIndent":true}</code> sin embargo ten en cuenta
-    que algunas de ellas pueden no funcionar en Violentmonkey. Ver <a
+    que algunas de ellas pueden no funcionar en Automation Script. Ver <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">lista completa</a>.
 descEditorOptionsGeneric:
@@ -230,7 +230,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    El repositorio debe existir previamente — Violentmonkey nunca lo crea ni lo
+    El repositorio debe existir previamente — Automation Script nunca lo crea ni lo
     inicializa por ti.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -296,38 +296,38 @@ extDescription:
     navegadores
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: En la lista negra en la configuración de Violentmonkey
+  message: En la lista negra en la configuración de Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey no puede ejecutar usercripts en esta página
+    Automation Script no puede ejecutar usercripts en esta página
 
     (ejemplos comunes: interfaz del navegador, una extensión, bloqueado a través
     de políticas, un sitio de motor de búsqueda en Opera)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey fue reiniciado. Recarga la pestaña para ejecutar los
+    Automation Script fue reiniciado. Recarga la pestaña para ejecutar los
     userscripts.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Hay varios métodos para instalar o rastrear ediciones en un archivo local:
     <1> Arrastra y suelta el archivo en una página abierta o menú emergente de
-    Violentmonkey (incluida esta). <2> Instala un servidor HTTP local para ese
+    Automation Script (incluida esta). <2> Instala un servidor HTTP local para ese
     archivo y ábrelo desde http://localhost. <3> Activa la opción "Permitir el
-    acceso a las URL del archivo" en los detalles de Violentmonkey en la página
+    acceso a las URL del archivo" en los detalles de Automation Script en la página
     chrome://extensions. Esto es peligroso, ya que cualquier userscript podría
     leer cualquier archivo local.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    Abre about:addons, selecciona "Violentmonkey", entra en "Permisos y datos" y
+    Abre about:addons, selecciona "Automation Script", entra en "Permisos y datos" y
     activa la opción "Acceso a archivos locales en tu computadora".
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -580,7 +580,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    Agrega un valor aleatorio al CSP de las páginas web que solo Violentmonkey
+    Agrega un valor aleatorio al CSP de las páginas web que solo Automation Script
     puede usar para ejecutar scripts en el modo de inyección $1; de lo
     contrario, los scripts deben editarse para usar $2.
 labelFirefoxPatchCspPopup:
@@ -1074,7 +1074,7 @@ msgReinstallScripts:
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
   message: >-
-    Es necesario reiniciar Violentmonkey para completar la actualización de $1 a
+    Es necesario reiniciar Automation Script para completar la actualización de $1 a
     $2.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
@@ -1359,7 +1359,7 @@ userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
     Activa la opción "Permitir scripts de usuario" en los detalles de
-    Violentmonkey en chrome://extensions y recarga la pestaña
+    Automation Script en chrome://extensions y recarga la pestaña
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.
   message: >-

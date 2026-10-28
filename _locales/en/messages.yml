@@ -196,7 +196,7 @@ descEditorOptions:
   message: >-
     Custom options for CodeMirror and addons in JSON object like
     <code>{"indentUnit":2, "smartIndent":true}</code> however note that some of
-    them may not work in Violentmonkey. See <a
+    them may not work in Automation Script. See <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">full list</a>.
 descEditorOptionsGeneric:
@@ -225,7 +225,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    The repository must already exist — Violentmonkey never creates or
+    The repository must already exist — Automation Script never creates or
     initializes it for you.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -284,35 +284,35 @@ extDescription:
   message: An open source userscript manager that supports a lot of browsers
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Blacklisted in Violentmonkey's settings
+  message: Blacklisted in Automation Script's settings
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey cannot run userscripts in this page
+    Automation Script cannot run userscripts in this page
 
     (common examples: browser UI, an extension, blocked via policies, a search
     engine site in Opera)
 failureReasonRestarted:
   description: Shown in the popup.
-  message: Violentmonkey was restarted. Please reload the tab to run userscripts.
+  message: Automation Script was restarted. Please reload the tab to run userscripts.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     There are several methods to install or track edits in a local file: <1>
-    Drag'n'drop the file into an open Violentmonkey page or popup, including
+    Drag'n'drop the file into an open Automation Script page or popup, including
     this one. <2> Install a local HTTP server for this file and open it via
     http://localhost. <3> Enable "Allow access to file URLs" in details for
-    Violentmonkey in chrome://extensions page. This is dangerous because any
+    Automation Script in chrome://extensions page. This is dangerous because any
     userscript may read any local file.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    Open about:addons, click "Violentmonkey", click "Permissions and data",
+    Open about:addons, click "Automation Script", click "Permissions and data",
     enable "Access local files on your computer".
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -415,7 +415,7 @@ installOptionTrackTooltip:
   message: The source file tab should be kept open in Firefox 68 and newer.
 labelAbout:
   description: Label shown on top of the about page.
-  message: About Violentmonkey
+  message: About Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -559,7 +559,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    Adds a random value to the CSP of webpages that only Violentmonkey can use
+    Adds a random value to the CSP of webpages that only Automation Script can use
     to run scripts in the $1 injection mode, otherwise scripts have to be edited
     to use $2.
 labelFirefoxPatchCspPopup:
@@ -1043,7 +1043,7 @@ msgReinstallScripts:
   message: 'Please re-save or reinstall these script(s):'
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
-  message: Violentmonkey must be restarted to finish updating from $1 to $2.
+  message: Automation Script must be restarted to finish updating from $1 to $2.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
   message: ' (code is the same)'
@@ -1319,7 +1319,7 @@ updateScriptsInTab:
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
-    Please enable "Allow User Scripts" in details for Violentmonkey in
+    Please enable "Allow User Scripts" in details for Automation Script in
     chrome://extensions and reload the tab
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.

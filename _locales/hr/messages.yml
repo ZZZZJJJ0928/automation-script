@@ -256,7 +256,7 @@ extDescription:
   message: Omogućava korištenje korisničkih skripti u web pregledniku.
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
   message: ''
@@ -370,7 +370,7 @@ installOptionTrackTooltip:
   message: ''
 labelAbout:
   description: Label shown on top of the about page.
-  message: O Violentmonkey
+  message: O Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

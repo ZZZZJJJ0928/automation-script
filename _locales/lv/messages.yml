@@ -262,7 +262,7 @@ extDescription:
   message: Atvērta pirmkoda lietotāja skriptu pārvaldnieks, kas atbalsta daudz pārlūku
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
   message: Liegumu sarakstā Vieoletmonkey iestatījumos
@@ -271,7 +271,7 @@ failureReasonNoninjectable:
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey šajā lapā nevar izpildīt lietotāju skriptus
+    Automation Script šajā lapā nevar izpildīt lietotāju skriptus
 
     (izplatīti piemēri: pārlūka saskarne, paplašinājums, liegts ar
     pamatnostādnēm, meklētāja vietne Opera pārlūkā)

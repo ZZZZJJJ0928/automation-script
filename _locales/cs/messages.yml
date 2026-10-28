@@ -285,7 +285,7 @@ extDescription:
     prohlížečů
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
   message: Blacklistováno v nastavení ViolentMonkey
@@ -300,14 +300,14 @@ failureReasonNoninjectable:
     engine v Opeře)
 failureReasonRestarted:
   description: Shown in the popup.
-  message: Violentmonkey byl restartovén. Prosím znovu načtěte záložku.
+  message: Automation Script byl restartovén. Prosím znovu načtěte záložku.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: ''
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    Otevři about:addons, klikni "Violentmonkey", klikni "Permissions and data",
+    Otevři about:addons, klikni "Automation Script", klikni "Permissions and data",
     povol "Access local files on your computer"
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -407,7 +407,7 @@ installOptionTrackTooltip:
   message: ''
 labelAbout:
   description: Label shown on top of the about page.
-  message: O Violentmonkey
+  message: O Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

@@ -199,7 +199,7 @@ descEditorOptions:
   message: >-
     Opțiuni personalizate pentru CodeMirror și suplimente în obiecte JSON precum
     <code>{"indentUnit":2, "smartIndent":true}</code> Cu toate acestea, reține
-    că unele dintre ele pot să nu funcționeze în Violentmonkey. Vezi <a
+    că unele dintre ele pot să nu funcționeze în Automation Script. Vezi <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">lista completă</a>.
 descEditorOptionsGeneric:
@@ -291,33 +291,33 @@ extDescription:
   message: Un manager de userscripturi, open source, care suportă o grămadă de browsere
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Trecut în lista neagră în setările Violentmonkey
+  message: Trecut în lista neagră în setările Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey nu poate rula userscripturi în această pagină
+    Automation Script nu poate rula userscripturi în această pagină
 
     (exemple uzuale: interfața de utilizator a browserului, o extensie, blocat
     via politici, un site al unui motor de căutare în Opera)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey a fost repornit. Te rugăm să reîncarci fila pentru a rula
+    Automation Script a fost repornit. Te rugăm să reîncarci fila pentru a rula
     userscripturi.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Există mai multe metode de instalare sau de urmărire a editărilor într-un
-    fișier local: <1> Trage și plasează fișierul într-o pagină Violentmonkey
+    fișier local: <1> Trage și plasează fișierul într-o pagină Automation Script
     deschisă sau într-o fereastră pop-up, inclusiv aceasta. <2> Instalează un
     server HTTP local pentru acest fișier și deschide-l prin http://localhost.
     <3> Activează „Permite accesul la adresele URL de fișiere” în detaliile
-    pentru Violentmonkey din pagina chrome://extensions. Acest lucru este
+    pentru Automation Script din pagina chrome://extensions. Acest lucru este
     periculos, deoarece orice userscript poate citi orice fișier local.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
@@ -424,7 +424,7 @@ installOptionTrackTooltip:
     versiunile mai noi.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Despre Violentmonkey
+  message: Despre Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

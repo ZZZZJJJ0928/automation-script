@@ -1,65 +1,64 @@
-# Violentmonkey
+# Automation Script
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jinjaccalgkegednnccohejagnlnfdag.svg)](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
-[![Firefox Add-ons](https://img.shields.io/amo/v/violentmonkey.svg)](https://addons.mozilla.org/firefox/addon/violentmonkey)
-[![Microsoft Edge Add-on](https://img.shields.io/badge/dynamic/json?label=microsoft%20edge%20add-on&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Feeagobfjdenkkddmbclomhiblgggliao)](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+基于 [Violentmonkey（暴力猴）](https://github.com/violentmonkey/violentmonkey) 的 fork，为浏览器提供用户脚本安装、编辑、执行和管理功能。
 
-Violentmonkey provides userscripts support for browsers.
-It works on browsers with [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) support.
+- 项目包名：`automation-script`
+- 扩展显示名称：`Automation Script`
+- 项目仓库：[ZZZZJJJ0928/automation-script](https://github.com/ZZZZJJJ0928/automation-script)，Git remote 名为 `origin`
+- 上游：`violentmonkey/violentmonkey`，Git remote 名为 `upstream`
+- 默认分支：`automation-script`
+- 初始基线：`97eb799d`（上游 `master`，2026-10-28 拉取）
 
-More details can be found [here](https://violentmonkey.github.io/).
+保留上游 Git 历史、MIT 许可证和作者署名。上游说明见 [README.upstream.md](./README.upstream.md)。
 
-Join our Discord server:
+## 本地开发
 
-[![Discord](https://img.shields.io/discord/995346102003965952?label=discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/XHtUNSm6Xc)
+需要 Node.js 24 或更新版本，以及 `package.json` 指定的 pnpm 12.13.0。
 
-## Automated Builds for Testers
+```sh
+pnpm install --frozen-lockfile
 
-* [CI workflows](https://github.com/violentmonkey/violentmonkey/actions/workflows/ci.yml) (only for signed-in github.com users)
-* [nightly.link latest](https://nightly.link/violentmonkey/violentmonkey/workflows/ci/master?preview) (to download any other build replace `github.com` with `nightly.link` in the artifact URL)
+# Chrome / Chromium：Manifest V3
+pnpm dev:mv3
 
-A test build is generated automatically for changes between beta releases. It can be installed as an unpacked extension in Chrome and Chromium-based browsers or as a temporary extension in Firefox. It's likely to have bugs so do an export in Violentmonkey settings first. This zip is available only if you're logged-in on GitHub site. Open an entry in the [CI workflows](https://github.com/violentmonkey/violentmonkey/actions/workflows/ci.yml) table and click the `Violentmonkey-...` link at the bottom to download it.
-
-## Workflows
-
-### Development
-
-Install [Node.js](https://nodejs.org/) and PNPM.
-The version of Node.js should match `"node"` key in `package.json`.
-
-``` sh
-# Install dependencies
-$ pnpm ci
-
-# Watch and compile
-$ pnpm dev
+# Firefox / 支持 Manifest V2 的浏览器
+pnpm dev
 ```
 
-Then load the extension from 'dist/'.
+没有全局 pnpm 时，可用 `npx --yes pnpm@12.13.0` 替代上述命令中的 `pnpm`。
 
-### Test + lint
+## 构建和加载
 
-``` sh
-$ pnpm run ci
+```sh
+# Chrome / Chromium，输出到 dist-mv3/
+pnpm build:mv3
+
+# Manifest V2，输出到 dist/
+pnpm build
 ```
 
-### Build
+在 Chrome 的 `chrome://extensions` 开启开发者模式，选择“加载已解压的扩展程序”，加载本项目的 `dist-mv3/`。然后在 Automation Script 的详情页开启“允许运行用户脚本”。
 
-To release a new version, we must build the assets and upload them to web stores.
+Firefox 可在 `about:debugging` →“此 Firefox”→“临时载入附加组件”选择 `dist/manifest.json`。本地分支使用独立的 Firefox 扩展 ID `automation-script@local`。
 
-``` sh
-# Build for normal releases
-$ pnpm build
+## 检查
 
-# Build for self-hosted release that has an update_url
-$ pnpm build:selfHosted
+```sh
+pnpm run ci
 ```
 
-### Release
+## 原有 QQ 邮箱脚本
 
-See [RELEASE](RELEASE.md) for the release flow.
+此前目录中的脚本、说明、测试及 npm 配置保存在 [userscripts/qqmail-inbox-eml/](./userscripts/qqmail-inbox-eml/README.md)。原有截图保留在同一本地目录，已通过 `.gitignore` 排除上传。它是独立用户脚本，不会自动安装到扩展中。
 
-## Related Projects
+```sh
+cd userscripts/qqmail-inbox-eml
+npm ci
+npm test
+```
 
-- [Violentmonkey for Opera Presto](https://github.com/violentmonkey/violentmonkey-oex)
-- [Violentmonkey for Maxthon](https://github.com/violentmonkey/violentmonkey-mx)
+## 上游兼容性
+
+界面名称、页面标题、导出文件名前缀和新建脚本的命名空间已调整。内部 `Violentmonkey` 协议标识、`GM_info.scriptHandler`、备份数据格式及同步目录保留上游行为，以维持用户脚本和数据兼容性。
+
+上游文档链接、图标、商店发布脚本及自托管更新地址仍保留；这些发布配置尚未适配本地分支。

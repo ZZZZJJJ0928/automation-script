@@ -200,7 +200,7 @@ descEditorOptions:
   message: >-
     CodeMirror ve eklentiler için <code>{"indentUnit":2,
     "smartIndent":true}</code> gibi JSON nesnesi biçiminde özel seçenekler
-    mevcuttur; ancak bunların bazılarının Violentmonkey'de çalışmayabileceğini
+    mevcuttur; ancak bunların bazılarının Automation Script'de çalışmayabileceğini
     unutmayın. <a href="https://codemirror.net/doc/manual.html#config"
     target="_blank" rel="noopener noreferrer">Tam listeye</a> bakın.
 descEditorOptionsGeneric:
@@ -231,7 +231,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    Depo önceden mevcut olmalıdır — Violentmonkey bunu sizin adınıza asla
+    Depo önceden mevcut olmalıdır — Automation Script bunu sizin adınıza asla
     oluşturmaz veya başlatmaz.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -293,39 +293,39 @@ extDescription:
   message: Birçok tarayıcıyı destekleyen açık kaynaklı kullanıcı betiği yöneticisi
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Violentmonkey ayarlarında kara listeye alındı
+  message: Automation Script ayarlarında kara listeye alındı
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey bu sayfada kullanıcı betiklerini çalıştıramaz
+    Automation Script bu sayfada kullanıcı betiklerini çalıştıramaz
 
     (yaygın örnekler: tarayıcı arayüzü, bir uzantı, ilkeler yoluyla engellenmiş
     sayfalar, Opera’daki bir arama motoru sitesi)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey yeniden başlatıldı. Kullanıcı betiklerini çalıştırmak için
+    Automation Script yeniden başlatıldı. Kullanıcı betiklerini çalıştırmak için
     lütfen sekmeyi yeniden yükleyin.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Yerel bir dosyayı yüklemek veya üzerinde yapılan düzenlemeleri takip etmek
     için birkaç yöntem vardır: <1> Dosyayı, bu sayfa da dahil olmak üzere açık
-    bir Violentmonkey sayfasına veya açılır penceresine sürükleyip bırakın. <2>
+    bir Automation Script sayfasına veya açılır penceresine sürükleyip bırakın. <2>
     Bu dosya için yerel bir HTTP sunucusu kurun ve http://localhost adresinden
-    açın. <3> chrome://extensions sayfasındaki Violentmonkey ayrıntılarında
+    açın. <3> chrome://extensions sayfasındaki Automation Script ayrıntılarında
     “Dosya URL’lerine erişime izin ver” seçeneğini etkinleştirin. Bu, herhangi
     bir kullanıcı betiğinin herhangi bir yerel dosyayı okuyabilmesi nedeniyle
     tehlikelidir.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    about:addons sayfasına girin, "Violentmonkey"e tıklayın, "İzinler ve
+    about:addons sayfasına girin, "Automation Script"e tıklayın, "İzinler ve
     veriler"e tıklayın, "Bilgisayarınızdaki dosyalara erişme"yi etkinleştirin.
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -430,7 +430,7 @@ installOptionTrackTooltip:
   message: Firefox 68 ve sonrasında kaynak dosyası sekmesi açık tutulmalıdır.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Violentmonkey hakkında
+  message: Automation Script hakkında
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -578,7 +578,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    Web sayfalarının CSP’sine, yalnızca Violentmonkey’in $1 enjeksiyon modunda
+    Web sayfalarının CSP’sine, yalnızca Automation Script’in $1 enjeksiyon modunda
     betikleri çalıştırmak için kullanabileceği rastgele bir değer ekler; aksi
     takdirde betiklerin $2 kullanacak şekilde düzenlenmesi gerekir.
 labelFirefoxPatchCspPopup:
@@ -1065,7 +1065,7 @@ msgReinstallScripts:
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
   message: >-
-    $1 sürümünden $2 sürümüne güncellemeyi tamamlamak için Violentmonkey yeniden
+    $1 sürümünden $2 sürümüne güncellemeyi tamamlamak için Automation Script yeniden
     başlatılmalıdır.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
@@ -1347,7 +1347,7 @@ updateScriptsInTab:
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
-    Lütfen chrome://extensions adresinde Violentmonkey’in ayrıntılar bölümünden
+    Lütfen chrome://extensions adresinde Automation Script’in ayrıntılar bölümünden
     “Kullanıcı Komut Dosyalarına İzin Ver” seçeneğini etkinleştirin ve sekmeyi
     yeniden yükleyin
 userScriptsPermissionNoteOld:

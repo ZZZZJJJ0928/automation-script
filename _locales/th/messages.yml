@@ -196,7 +196,7 @@ descEditorOptions:
   message: >-
     ตัวเลือกที่กำหนดเองสำหรับ CodeMirror และ addon ในวัตถุ JSON เช่น
     <code>{"indentUnit":2, "smartIndent":true}</code>
-    อย่างไรก็ตามควรระลึกไว้ว่าบางตัวเลือกอาจใช้งานไม่ได้กับ  Violentmonkey ดู<a
+    อย่างไรก็ตามควรระลึกไว้ว่าบางตัวเลือกอาจใช้งานไม่ได้กับ  Automation Script ดู<a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">รายการเต็ม</a>
 descEditorOptionsGeneric:
@@ -225,7 +225,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    The repository must already exist — Violentmonkey never creates or
+    The repository must already exist — Automation Script never creates or
     initializes it for you.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -287,29 +287,29 @@ extDescription:
   message: ตัวจัดการ userscript แบบโอเพนซอร์สที่รองรับเบราว์เซอร์ได้หลากหลาย
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: ถูกห้ามในการตั้งค่าของ Violentmonkey
+  message: ถูกห้ามในการตั้งค่าของ Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey ไม่สามารถเรียกใช้ userscript ในหน้านี้ได้
+    Automation Script ไม่สามารถเรียกใช้ userscript ในหน้านี้ได้
 
     (ตัวอย่างที่พบบ่อย: ส่วนติดต่อผู้ใช้ของเบราว์เซอร์ ส่วนขยาย
     ถูกบล็อกผ่านการตั้งค่านโยบาย เว็บไซต์ที่เป็นเครื่องมือค้นหาใน Opera)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey ถูกเริ่มทำงานใหม่แล้ว กรุณาโหลดแท็บใหม่เพื่อเรียกใช้
+    Automation Script ถูกเริ่มทำงานใหม่แล้ว กรุณาโหลดแท็บใหม่เพื่อเรียกใช้
     userscript
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     มีหลายวิธีที่จะติดตั้งหรือติดตามการแก้ไขในไฟล์ในเครื่อง: <1>
-    ลากและปล่อยไฟล์ไปยังหน้าหรือป๊อปอัปของ Violentmonkey ที่เปิดอยู่
+    ลากและปล่อยไฟล์ไปยังหน้าหรือป๊อปอัปของ Automation Script ที่เปิดอยู่
     ซึ่งรวมถึงหน้า/ป๊อปอัปนี้ด้วย <2> ติดตั้งเซิร์ฟเวอร์ HTTP
     บนเครื่องสำหรับไฟล์นี้แล้วเปิดผ่าน http://localhost <3> เปิด
     "อนุญาตให้เข้าถึงไฟล์ URL" ในหน้ารายละเอียดสำหรับ Violetmonkey ในหน้า
@@ -318,7 +318,7 @@ fileInstallBlocked:
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    Open about:addons, click "Violentmonkey", click "Permissions and data",
+    Open about:addons, click "Automation Script", click "Permissions and data",
     enable "Access local files on your computer".
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -565,7 +565,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    Adds a random value to the CSP of webpages that only Violentmonkey can use
+    Adds a random value to the CSP of webpages that only Automation Script can use
     to run scripts in the $1 injection mode, otherwise scripts have to be edited
     to use $2.
 labelFirefoxPatchCspPopup:
@@ -1047,7 +1047,7 @@ msgReinstallScripts:
   message: 'Please re-save or reinstall these script(s):'
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
-  message: Violentmonkey must be restarted to finish updating from $1 to $2.
+  message: Automation Script must be restarted to finish updating from $1 to $2.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
   message: ' (code is the same)'
@@ -1317,7 +1317,7 @@ updateScriptsInTab:
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
-    Please enable "Allow User Scripts" in details for Violentmonkey in
+    Please enable "Allow User Scripts" in details for Automation Script in
     chrome://extensions and reload the tab
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.

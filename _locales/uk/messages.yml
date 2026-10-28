@@ -200,7 +200,7 @@ descEditorOptions:
   message: >-
     Опції для редактора CodeMirror та його доповнень у форматі JSON, наприклад
     <code>{"indentUnit":2, "smartIndent":true}</code> Майте на увазі, що деякі
-    опції можуть не працювати в Violentmonkey. Дивитись <a
+    опції можуть не працювати в Automation Script. Дивитись <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">повний список</a>.
 descEditorOptionsGeneric:
@@ -285,36 +285,36 @@ editValueAllHint:
 extDescription:
   description: Description for this extension, will be displayed in web store
   message: >-
-    Violentmonkey дозволяє користувачеві автоматично вводити скрипти в сторінки,
+    Automation Script дозволяє користувачеві автоматично вводити скрипти в сторінки,
     щоб змінювати їх вигляд чи поведінку.
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Чорний список Violentmonkey
+  message: Чорний список Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey не може запускати користувацькі скрипти на цій сторінці
+    Automation Script не може запускати користувацькі скрипти на цій сторінці
 
     (типові приклади: інтерфейс браузера, розширення, заблоковані через
     політики, пошуковий двигун в Opera)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Програма Violentmonkey була перезапущена. Будь ласка, перезавантажте
+    Програма Automation Script була перезапущена. Будь ласка, перезавантажте
     вкладку, щоб виконати юзерскрипти.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Існує кілька методiв встановлення або слідкування за змінами у локальному
     файлi: <1> Перетягнiть файл у вiдкриту сторiнку або спливаюче вiкно
-    Violentmonkey, наприклад, у цьому. <2> Встановіть локальний сервер HTTP для
+    Automation Script, наприклад, у цьому. <2> Встановіть локальний сервер HTTP для
     цього файлу та вiдкрийте його через http://localhost. <3> Активуйте опцію
-    «Дозволити доступ до URL-адрес файлiв» у налаштуваннях Violentmonkey на
+    «Дозволити доступ до URL-адрес файлiв» у налаштуваннях Automation Script на
     сторiнцi chrome://extensions. Це небезпечно, тому що будь-який юзерскрипт
     може читати всі локальні файли.
 fileInstallBlockedFF:
@@ -423,7 +423,7 @@ installOptionTrackTooltip:
     новішому.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Про додаток Violentmonkey
+  message: Про додаток Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

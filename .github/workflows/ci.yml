@@ -3,7 +3,7 @@ name: CI
 on:
   workflow_dispatch:
   push:
-    branches: [master]
+    branches: [master, automation-script]
     tags-ignore:
       - 'v*' # version-tagged commits are releases which have their own workflow
     paths-ignore:
@@ -12,7 +12,7 @@ on:
       - LICENSE
       - README.md
   pull_request:
-    branches: [master]
+    branches: [master, automation-script]
 
 jobs:
   ci:
@@ -49,19 +49,19 @@ jobs:
         uses: actions/upload-artifact@v7
         continue-on-error: true
         with:
-          name: 'Violentmonkey-test-webext-${{ env.GIT_DESCRIBE }}'
+          name: 'Automation-Script-test-webext-${{ env.GIT_DESCRIBE }}'
           path: 'dist/*'
           if-no-files-found: error
       - name: Upload MV3 zip
         uses: actions/upload-artifact@v7
         continue-on-error: true
         with:
-          name: 'Violentmonkey-test-mv3-${{ env.GIT_DESCRIBE }}'
+          name: 'Automation-Script-test-mv3-${{ env.GIT_DESCRIBE }}'
           path: 'dist-mv3/*'
           if-no-files-found: error
 
       - name: Upload to Transifex - check src
-        if: github.event_name == 'push' || github.event.pull_request.merged == true
+        if: github.repository == 'violentmonkey/violentmonkey' && (github.event_name == 'push' || github.event.pull_request.merged == true)
         uses: marceloprado/has-changed-path@v1.0.1
         id: changed-path-src
         with:

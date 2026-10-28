@@ -196,7 +196,7 @@ descEditorOptions:
   message: >-
     Anpassade alternativ för CodeMirror och tillägg i JSON-objekt som
     <code>{"indentUnit":2, "smartIndent":true}</code> Observera att vissa av dem
-    kanske inte fungerar i Violentmonkey. Se <a
+    kanske inte fungerar i Automation Script. Se <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">full lista</a>.
 descEditorOptionsGeneric:
@@ -286,30 +286,30 @@ extDescription:
   message: En användarskripthanterare med öppen källkod som stöder många webbläsare
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Svartlistad i Violentmonkey's inställningar
+  message: Svartlistad i Automation Script's inställningar
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey kan inte köra användarskript på den här sidan
+    Automation Script kan inte köra användarskript på den här sidan
 
     (vanliga exempel: webbläsar-UI, tillägg, blockerad via policyer, en
     sökmotorsida i Opera)
 failureReasonRestarted:
   description: Shown in the popup.
-  message: Violentmonkey har startats om. Ladda om fliken för att köra användarskript.
+  message: Automation Script har startats om. Ladda om fliken för att köra användarskript.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Det finns flera metoder för att installera eller spåra redigeringar i en
-    lokal fil: <1> Dra och släpp filen till en öppen Violentmonkey-sida eller
+    lokal fil: <1> Dra och släpp filen till en öppen Automation Script-sida eller
     popup, inklusive denna. <2> Installera en lokal HTTP-server för denna fil
     och öppna den via http://localhost. <3> Aktivera "Tillåt åtkomst till
-    filwebbadresser" i detaljer för Violentmonkey på sidan chrome://extensions.
+    filwebbadresser" i detaljer för Automation Script på sidan chrome://extensions.
     Detta är farligt eftersom alla användarskript kan läsa alla lokala filer.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.

@@ -196,7 +196,7 @@ descEditorOptions:
   message: >-
     Пользовательские параметры для редактора CodeMirror и его дополнений в
     формате JSON, например, <code>{"indentUnit":2, "smartIndent":true}</code>.
-    Имейте в виду, что некоторые параметры могут не работать в Violentmonkey.
+    Имейте в виду, что некоторые параметры могут не работать в Automation Script.
     См. <a href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">полный список</a>.
 descEditorOptionsGeneric:
@@ -225,7 +225,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    Репозиторий должен уже существовать — Violentmonkey никогда не создаёт и не
+    Репозиторий должен уже существовать — Automation Script никогда не создаёт и не
     инициализирует его за вас.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -289,38 +289,38 @@ extDescription:
     браузеров
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Чёрный список Violentmonkey
+  message: Чёрный список Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey не может запускать скрипты на этой странице
+    Automation Script не может запускать скрипты на этой странице
 
     (частые случаи: интерфейс браузера, расширение, заблокировано политикой,
     сайт поисковика в Opera)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey был перезапущен. Пожалуйста, перезагрузите вкладку, чтобы
+    Automation Script был перезапущен. Пожалуйста, перезагрузите вкладку, чтобы
     запустить пользовательские скрипты.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Существует несколько способов установки или отслеживания правок в локальном
-    файле: <1>Перетащите файл на открытую страницу Violentmonkey или во
+    файле: <1>Перетащите файл на открытую страницу Automation Script или во
     всплывающее окно, включая это. <2>Установите локальный HTTP-сервер для этого
     файла и откройте его через http://localhost. <3>Включите «Разрешить
-    открывать локальные файлы по ссылкам» в сведениях Violentmonkey на странице
+    открывать локальные файлы по ссылкам» в сведениях Automation Script на странице
     chrome://extensions. Это опасно, так как любой пользовательский скрипт может
     прочитать любой локальный файл.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    Откройте about:addons, щёлкните Violentmonkey, нажмите «Разрешения и
+    Откройте about:addons, щёлкните Automation Script, нажмите «Разрешения и
     данные», включите «Доступ к локальным файлам на вашем компьютере».
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -423,7 +423,7 @@ installOptionTrackTooltip:
   message: Вкладка исходного файла должна оставаться открытой в Firefox 68 и новее.
 labelAbout:
   description: Label shown on top of the about page.
-  message: О расширении Violentmonkey
+  message: О расширении Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -568,7 +568,7 @@ labelFirefoxPatchCspHint:
     in Advanced settings.
   message: >-
     Добавляет случайное значение в CSP веб-страниц, которое может использовать
-    только Violentmonkey для запуска скриптов в режиме внедрения $1, в противном
+    только Automation Script для запуска скриптов в режиме внедрения $1, в противном
     случае скрипты придётся править для использования $2.
 labelFirefoxPatchCspPopup:
   description: >-
@@ -1057,7 +1057,7 @@ msgReinstallScripts:
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
   message: >-
-    Violentmonkey необходимо перезапустить, чтобы завершить обновление с $1 до
+    Automation Script необходимо перезапустить, чтобы завершить обновление с $1 до
     $2.
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
@@ -1346,7 +1346,7 @@ userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
     Пожалуйста, включите «Разрешить пользовательские скрипты» в настройках
-    Violentmonkey на странице chrome://extensions и перезагрузите вкладку
+    Automation Script на странице chrome://extensions и перезагрузите вкладку
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.
   message: >-

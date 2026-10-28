@@ -196,7 +196,7 @@ descEditorOptions:
   message: >-
     Tùy chọn cài đặt cho CodeMirror và addons trong đối tượng JSON
     như<code>{"indentUnit":2, "smartIndent":true}</code> . Tuy nhiên, lưu ý rằng
-    một số cài đặt có thể không hoạt động trong Violentmonkey. <a
+    một số cài đặt có thể không hoạt động trong Automation Script. <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">Xem chi tiết.</a>
 descEditorOptionsGeneric:
@@ -285,28 +285,28 @@ extDescription:
   message: Hỗ trợ chạy userscript trên trình duyệt.
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Đã ở trong danh sách đen của Violentmonkey
+  message: Đã ở trong danh sách đen của Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
-  message: Violentmonkey không hoạt động ở đây.
+  message: Automation Script không hoạt động ở đây.
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey đã được khởi động lại. Vui lòng tải lại tab để chạy
+    Automation Script đã được khởi động lại. Vui lòng tải lại tab để chạy
     userscripts.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Có một số phương pháp để cài đặt hoặc theo dõi chỉnh sửa trong một tệp cục
-    bộ: <1> Kéo và thả tệp vào một trang hoặc cửa sổ Violentmonkey đang mở, bao
+    bộ: <1> Kéo và thả tệp vào một trang hoặc cửa sổ Automation Script đang mở, bao
     gồm cả trang này. <2> Cài đặt một máy chủ HTTP cục bộ cho tệp này và mở nó
     qua http://localhost. <3> Bật "Cho phép truy cập vào URL tệp" trong chi tiết
-    cho Violentmonkey trong trang chrome://extensions. Điều này nguy hiểm vì bất
+    cho Automation Script trong trang chrome://extensions. Điều này nguy hiểm vì bất
     kỳ tập lệnh người dùng nào cũng có thể đọc bất kỳ tệp cục bộ nào.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
@@ -412,7 +412,7 @@ installOptionTrackTooltip:
   message: Bạn cần Firefox 68 hoặc phiên bản cao hơn để mở.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Thông tin Violentmonkey
+  message: Thông tin Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

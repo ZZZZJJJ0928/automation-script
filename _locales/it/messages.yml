@@ -202,7 +202,7 @@ descEditorOptions:
     Opzioni personalizzate per CodeMirror e componenti aggiuntivi in oggetto
     JSON, come <code>{"indentUnit":2, "smartIndent":true}</code>; tuttavia,
     tieni presente che alcune di esse potrebbero non funzionare in
-    Violentmonkey. Vedi l'<a
+    Automation Script. Vedi l'<a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">elenco completo</a>.
 descEditorOptionsGeneric:
@@ -293,32 +293,32 @@ extDescription:
   message: Un gestore di userscript open source che supporta un sacco di browser
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Aggiunto alla lista nera nelle impostazioni di Violentmonkey
+  message: Aggiunto alla lista nera nelle impostazioni di Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
   message: >-
-    Violentmonkey non può eseguire script utente in questa pagina
+    Automation Script non può eseguire script utente in questa pagina
 
     (esempi comuni: interfaccia utente del browser, un'estensione, bloccato da
     criteri di gruppo locali, un sito motore di ricerca in Opera)
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey è stato riavviato. Ricarica la pagina per eseguire gli
+    Automation Script è stato riavviato. Ricarica la pagina per eseguire gli
     userscript.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Esistono diversi metodi per installare o tenere traccia delle modifiche in
     un file locale: <1> Trascina il file in una pagina o in un popup di
-    Violentmonkey aperto, incluso questo. <2> Installa un server HTTP locale per
+    Automation Script aperto, incluso questo. <2> Installa un server HTTP locale per
     questo file e aprilo tramite http://localhost. <3> Abilita "Consenti accesso
-    a URL di file" nei dettagli di Violentmonkey nella pagina
+    a URL di file" nei dettagli di Automation Script nella pagina
     chrome://extensions. Questo è pericoloso perché qualsiasi userscript può
     leggere qualsiasi file locale.
 fileInstallBlockedFF:
@@ -422,7 +422,7 @@ installOptionTrackTooltip:
     versioni successive.
 labelAbout:
   description: Label shown on top of the about page.
-  message: Riguardo Violentmonkey
+  message: Riguardo Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

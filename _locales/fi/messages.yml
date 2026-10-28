@@ -256,7 +256,7 @@ extDescription:
   message: Lisää selaimiin tuen käyttäjäskripteille.
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
   message: ''
@@ -370,7 +370,7 @@ installOptionTrackTooltip:
   message: ''
 labelAbout:
   description: Label shown on top of the about page.
-  message: Tietoja Violentmonkeystä
+  message: Tietoja Automation Scriptstä
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.

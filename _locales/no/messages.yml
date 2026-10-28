@@ -252,7 +252,7 @@ extDescription:
   message: ''
 extName:
   description: Name of this extension.
-  message: ''
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
   message: ''

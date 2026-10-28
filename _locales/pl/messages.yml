@@ -194,7 +194,7 @@ descEditorOptions:
   message: >-
     Niestandardowe opcje dla CodeMirror i dodatków w obiekcie JSON, takie jak
     <code>{"indentUnit":2, "smartIndent":true}</code>, należy jednak pamiętać,
-    że niektóre z nich mogą nie działać w Violentmonkey. Zobacz <a
+    że niektóre z nich mogą nie działać w Automation Script. Zobacz <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">pełną listę</a>.
 descEditorOptionsGeneric:
@@ -222,7 +222,7 @@ descSyncGitRepoPreexisting:
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
   message: >-
-    Repozytorium musi już istnieć — Violentmonkey nigdy go za Ciebie nie utworzy
+    Repozytorium musi już istnieć — Automation Script nigdy go za Ciebie nie utworzy
     ani nie zainicjuje.
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
@@ -288,34 +288,34 @@ extDescription:
     wiele przeglądarek.
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Dodano do czarnej listy w ustawieniach Violentmonkey
+  message: Dodano do czarnej listy w ustawieniach Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
-  message: "Violentmonkey nie może uruchamiać skryptów użytkownika na tej stronie\n(typowe przykłady: interfejs przeglądarki, rozszerzenia, zablokowane przez zasady, strona wyszukiwarki w\_Operze)"
+  message: "Automation Script nie może uruchamiać skryptów użytkownika na tej stronie\n(typowe przykłady: interfejs przeglądarki, rozszerzenia, zablokowane przez zasady, strona wyszukiwarki w\_Operze)"
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey został ponownie uruchomiony. Załaduj ponownie kartę, aby
+    Automation Script został ponownie uruchomiony. Załaduj ponownie kartę, aby
     uruchomić skrypty użytkownika.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Istnieje kilka sposobów instalacji lub śledzenia zmian w pliku lokalnym: <1>
-    Przeciągnij i upuść plik na otwartą stronę lub okno Violentmonkey (także
+    Przeciągnij i upuść plik na otwartą stronę lub okno Automation Script (także
     tutaj). <2> Skonfiguruj lokalny serwer HTTP i otwórz plik przez
     http://localhost. <3> Włącz "Zezwalaj na dostęp do adresów URL plików" w
-    szczegółach rozszerzenia Violentmonkey na stronie chrome://extensions. Jest
+    szczegółach rozszerzenia Automation Script na stronie chrome://extensions. Jest
     to ryzykowne, ponieważ każdy skrypt użytkownika będzie mógł odczytywać
     lokalne pliki.
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
-    Otwórz about:addons, kliknij „Violentmonkey”, kliknij „Uprawnienia i dane”,
+    Otwórz about:addons, kliknij „Automation Script”, kliknij „Uprawnienia i dane”,
     włącz „Dostęp do lokalnych plików na tym komputerze”.
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
@@ -425,7 +425,7 @@ installOptionTrackTooltip:
     Firefoksa w wersjach 68 i nowszych.
 labelAbout:
   description: Label shown on top of the about page.
-  message: O rozszerzeniu Violentmonkey
+  message: O rozszerzeniu Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -572,7 +572,7 @@ labelFirefoxPatchCspHint:
     in Advanced settings.
   message: >-
     Dodaje losową wartość do CSP stron internetowych, której może używać tylko
-    Violentmonkey do uruchamiania skryptów w trybie wstrzykiwania $1, w
+    Automation Script do uruchamiania skryptów w trybie wstrzykiwania $1, w
     przeciwnym razie trzeba będzie edytować skrypty, aby używać $2.
 labelFirefoxPatchCspPopup:
   description: >-
@@ -1052,7 +1052,7 @@ msgReinstallScripts:
   message: 'Zapisz ponownie lub przeinstaluj te skrypty:'
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
-  message: "Należy ponownie uruchomić Violentmonkey, aby zakończyć aktualizację z\_wersji $1 do $2."
+  message: "Należy ponownie uruchomić Automation Script, aby zakończyć aktualizację z\_wersji $1 do $2."
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
   message: (kod jest taki sam)
@@ -1322,7 +1322,7 @@ updateScriptsInTab:
   message: Zaktualizuj skrypty bieżącej karty
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
-  message: "Włącz opcję „Zezwalaj na skrypty użytkownika” w\_szczegółach Violentmonkey w\_chrome://extensions i\_odśwież kartę"
+  message: "Włącz opcję „Zezwalaj na skrypty użytkownika” w\_szczegółach Automation Script w\_chrome://extensions i\_odśwież kartę"
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.
   message: "Włącz „Tryb dewelopera” w\_chrome://extensions i\_odśwież kartę"

@@ -201,7 +201,7 @@ descEditorOptions:
   message: >-
     Options personnalisées pour CodeMirror et extensions dans un objet JSON
     comme<code>{"indentUnit":2, "smartIndent":true}</code>, cependant notez que
-    certaines peuvent ne pas marcher dans Violentmonkey. Voir la <a
+    certaines peuvent ne pas marcher dans Automation Script. Voir la <a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">liste complète</a>. Pour utiliser un thème
     CodeMirror, spécifiez son nom de fichier comme <code>"theme":
@@ -299,29 +299,29 @@ extDescription:
     nombreux navigateurs
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
-  message: Sur la liste noire des paramètres de Violentmonkey
+  message: Sur la liste noire des paramètres de Automation Script
 failureReasonNoninjectable:
   description: >-
     Shown for URLs that cannot be processed (same places as
     failureBlacklistedUrl)
-  message: "Violentmonkey ne peut pas lancer de scripts utilisateur\nsur cette page (exemples courants\_: page du navigateur\nou d’une extension)"
+  message: "Automation Script ne peut pas lancer de scripts utilisateur\nsur cette page (exemples courants\_: page du navigateur\nou d’une extension)"
 failureReasonRestarted:
   description: Shown in the popup.
   message: >-
-    Violentmonkey a été redémarré. Veuillez recharger l'onglet pour exécuter les
+    Automation Script a été redémarré. Veuillez recharger l'onglet pour exécuter les
     scripts utilisateur.
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
     Il existe plusieurs méthodes pour installer ou suivre les modifications dans
     un fichier local : <1> Glissez-déposez le fichier dans une page ou une
-    fenêtre contextuelle ouverte de Violentmonkey, y compris celle-ci. <2>
+    fenêtre contextuelle ouverte de Automation Script, y compris celle-ci. <2>
     Installez un serveur HTTP local pour ce fichier et ouvrez-le via
     http://localhost. <3>  Activez l'option « Autoriser l'accès aux URL de
-    fichiers » dans les détails de Violentmonkey sur la page
+    fichiers » dans les détails de Automation Script sur la page
     chrome://extensions. Ceci est dangereux car n'importe quel script
     utilisateur peut lire n'importe quel fichier local.
 fileInstallBlockedFF:
@@ -435,7 +435,7 @@ installOptionTrackTooltip:
     plus.
 labelAbout:
   description: Label shown on top of the about page.
-  message: À propos de Violentmonkey
+  message: À propos de Automation Script
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -586,7 +586,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    Ajoute une valeur aléatoire à la CSP des pages web que seul Violentmonkey
+    Ajoute une valeur aléatoire à la CSP des pages web que seul Automation Script
     peut utiliser pour exécuter des scripts en mode d'injection $1 ; sinon, les
     scripts doivent être modifiés pour utiliser $2.
 labelFirefoxPatchCspPopup:
@@ -1330,7 +1330,7 @@ userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
     Veuillez activer « Autoriser les scripts utilisateur » dans les détails de
-    Violentmonkey dans chrome://extensions et recharger l'onglet.
+    Automation Script dans chrome://extensions et recharger l'onglet.
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.
   message: ''

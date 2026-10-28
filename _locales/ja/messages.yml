@@ -189,7 +189,7 @@ descEditorOptions:
   description: Description of editor options JSON section.
   message: >-
     CodeMirrorやそのアドオン用の設定は、JSONオブジェクトとして<code>{"indentUnit":2,
-    "smartIndent":true}</code> のように指定します。 一部の設定はViolentmonkeyでは動作しないことがあります。<a
+    "smartIndent":true}</code> のように指定します。 一部の設定はAutomation Scriptでは動作しないことがあります。<a
     href="https://codemirror.net/doc/manual.html#config" target="_blank"
     rel="noopener noreferrer">完全な解説</a>をご覧ください。
 descEditorOptionsGeneric:
@@ -213,7 +213,7 @@ descSyncGitRepoPreexisting:
   description: >-
     Note explaining the repository must already exist; Violentmonkey never
     creates it.
-  message: リポジトリはあらかじめ存在している必要があります。Violentmonkeyが自動で作成または初期化することはありません。
+  message: リポジトリはあらかじめ存在している必要があります。Automation Scriptが自動で作成または初期化することはありません。
 disabledScriptsGroup:
   description: 'Used as "Disabled scripts: group"'
   message: グループ
@@ -271,7 +271,7 @@ extDescription:
   message: 幅広いブラウザに対応のオープンソースのユーザースクリプト管理ツール
 extName:
   description: Name of this extension.
-  message: Violentmonkey
+  message: Automation Script
 failureReasonBlacklisted:
   description: Shown for blacklisted URLs (in the extension icon tooltip, in the popup)
   message: ブロックリストに登録済み
@@ -284,19 +284,19 @@ failureReasonNoninjectable:
     (一般例: ブラウザーのUI、拡張機能、ポリシーにてブロック済み、Operaの検索サイト)
 failureReasonRestarted:
   description: Shown in the popup.
-  message: Violentmonkey が再起動しました。タブを再読込みし、ユーザースクリプトを実行してください。
+  message: Automation Script が再起動しました。タブを再読込みし、ユーザースクリプトを実行してください。
 fileInstallBlocked:
   description: Text in the installer when a local file is dropped into the browser window.
   message: >-
-    パソコン内のファイルをインストールし追跡する方法が数種類あります:<1> 開いている Violentmonkey
+    パソコン内のファイルをインストールし追跡する方法が数種類あります:<1> 開いている Automation Script
     のページやポップアップにファイルをドラッグ＆ドロップ。ここでも可能。 <2> ファイル用のローカルのHTTPサーバーをインストールし
-    http://localhost 経由でファイルを開く。 <3> chrome://extensions ページを開き、Violentmonkey
+    http://localhost 経由でファイルを開く。 <3> chrome://extensions ページを開き、Automation Script
     の「詳細」から「ファイルのURLへのアクセスを許可」を有効化します。しかしこれは危険です。ユーザースクリプトがパソコン内のファイルを読み込む可能性があります。
 fileInstallBlockedFF:
   description: Text in the installer when a local file is dropped into Firefox window.
   message: >-
     about:addons
-    を開き、"Violentmonkey"をクリックし、"権限とデータ"をクリックして、"コンピューター上のローカルファイルへのアクセス"を有効にしてください。
+    を開き、"Automation Script"をクリックし、"権限とデータ"をクリックして、"コンピューター上のローカルファイルへのアクセス"を有効にしてください。
 filterAlphabeticalOrder:
   description: Label for option to sort scripts in alphabetical order.
   message: アルファベット順
@@ -396,7 +396,7 @@ installOptionTrackTooltip:
   message: Firefox 68 以降では、入力元ファイルのタブは開いたままにしてください。
 labelAbout:
   description: Label shown on top of the about page.
-  message: Violentmonkey について
+  message: Automation Script について
   touched: false
 labelAdvanced:
   description: Label for button to show advanced settings.
@@ -536,7 +536,7 @@ labelFirefoxPatchCspHint:
     (`$1` will be shown as <page>, $2 is <wrappedJSObject>) Hint for the option
     in Advanced settings.
   message: >-
-    WebページのCSPにランダムな値を追加し、Violentmonkeyのみが $1
+    WebページのCSPにランダムな値を追加し、Automation Scriptのみが $1
     注入モードでスクリプトを実行できるようにします。これを有効にしない場合、スクリプトを $2 を使用するように編集する必要があります。
 labelFirefoxPatchCspPopup:
   description: >-
@@ -579,7 +579,7 @@ labelImportScriptData:
   message: スクリプトデータのインポート
 labelImportSettings:
   description: Label for option to import settings from zip file.
-  message: Violentmonkey の設定もインポート
+  message: Automation Script の設定もインポート
 labelInclude:
   description: Label of @include rules.
   message: 実行するページのURL (@include)
@@ -999,7 +999,7 @@ msgReinstallScripts:
   message: '次のスクリプトを再び保存または再インストールしてください:'
 msgRestartToUpdate:
   description: $1 is the old version, $2 is the new version.
-  message: $1 から $2 への更新を完了するには、Violentmonkeyを再起動する必要があります。
+  message: $1 から $2 への更新を完了するには、Automation Scriptを再起動する必要があります。
 msgSameCode:
   description: Shown inside the title when re-installing a script that's already installed.
   message: (変更なし)
@@ -1163,7 +1163,7 @@ searchUseRegex:
   message: 正規表現を使用
 sideMenuAbout:
   description: 'Side menu: About'
-  message: Violentmonkey について
+  message: Automation Script について
 sideMenuInstalled:
   description: 'Side menu: Installed scripts'
   message: インストール済み
@@ -1260,7 +1260,7 @@ updateScriptsInTab:
 userScriptsPermissionNote:
   description: Text in the popup or dashboard.
   message: >-
-    chrome://extensions の Violentmonkey の詳細で "ユーザースクリプトを許可する"
+    chrome://extensions の Automation Script の詳細で "ユーザースクリプトを許可する"
     を有効にして、タブを再読み込みしてください
 userScriptsPermissionNoteOld:
   description: Text in the popup or dashboard in older browsers.
