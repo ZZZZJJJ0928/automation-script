@@ -9,6 +9,11 @@ import {
 import { addOwnCommands, addPublicCommands } from './init';
 import { grantTab, hasGrant, listGrants, revokeTab } from './mcp-grants';
 import {
+  assertMcpDocument, beginCall, clearExecution, dropExecutionTab, failCall, getHandlers, getResults,
+  registerHandler, reportResult,
+} from './mcp-execution';
+import { clearFiles, dropFileTab, getFiles, getFileStorage, saveMcpFile } from './mcp-files';
+import {
   addLogs, clear as clearObserved, dropTab, getLogs, getScripts as getTabScripts,
   isCapturing, reserveLoad, setActive,
 } from './mcp-observe';
@@ -50,6 +55,8 @@ addOwnCommands({
     status = 'idle';
     dropGrants();
     clearObserved();
+    clearExecution();
+    clearFiles();
   },
   /** Open tabs and whether the agent may act on them, for the settings page */
   async McpGetTabs() {
@@ -73,6 +80,8 @@ addOwnCommands({
   McpRevokeTab(tabId) {
     revokeTab(tabId);
     dropTab(tabId);
+    dropExecutionTab(tabId);
+    dropFileTab(tabId);
   },
 });
 
@@ -81,16 +90,42 @@ function dropGrants() {
   for (const tabId of listGrants()) {
     revokeTab(tabId);
     dropTab(tabId);
+    dropExecutionTab(tabId);
+    dropFileTab(tabId);
   }
 }
 
 tabsOnRemoved.addListener((tabId) => {
   revokeTab(tabId);
   dropTab(tabId);
+  dropExecutionTab(tabId);
+  dropFileTab(tabId);
 });
 
-/** GM_log output, forwarded by content scripts of tabs the agent may read */
+/** Script calls, results and logs forwarded by authorized content scripts. */
 addPublicCommands({
+  RegisterMcpHandler({ id, token }, src) {
+    const tabId = src?.tab?.id;
+    if (!isObserving(tabId)) throw new Error('Tab is not authorized for MCP');
+    getAliveScript(id);
+    return registerHandler(tabId, src.frameId || 0, token, id);
+  },
+  ScriptResult(data, src) {
+    const tabId = src?.tab?.id;
+    if (!isObserving(tabId)) throw new Error('Tab is not authorized for MCP');
+    getAliveScript(data.id);
+    return reportResult(tabId, src.frameId || 0, data.token, data);
+  },
+  McpSaveFile(data, src) {
+    const tabId = src?.tab?.id;
+    const frameId = src?.frameId || 0;
+    return saveMcpFile(tabId, frameId, data, () => {
+      if (!isObserving(tabId)) throw new Error('Tab is not authorized for MCP');
+      const script = getAliveScript(data.id);
+      if (!script.config.enabled) throw new Error('Script is disabled');
+      assertMcpDocument(tabId, frameId, data.token);
+    });
+  },
   ScriptLog({ entries, dropped }, src) {
     const tabId = src?.tab?.id;
     if (tabId == null || !entries?.length && !dropped) return;
@@ -130,6 +165,8 @@ function connect({ port, token }) {
     if (s === 'closed') {
       dropGrants();
       clearObserved();
+      clearExecution();
+      clearFiles();
     }
   });
   client.connect();
@@ -155,6 +192,33 @@ function toSummary({ props, meta, config }) {
 }
 
 function registerTools(c) {
+  c.handle('file_storage', () => getFileStorage());
+  // Convert validation failures into protocol errors while keeping script failures
+  // as structured execution results (with a callId the caller can query).
+  const handleExecution = (name, fn) => c.handle(name, async (params) => {
+    await getGrantedTab(params.tabId);
+    try { return await fn(params); } catch (e) {
+      throw new ToolCallError(e.code || ErrorCode.Internal, e.message || String(e));
+    }
+  });
+  handleExecution('script_handlers', ({ tabId }) => getHandlers(tabId));
+  handleExecution('script_results', ({ tabId, ...opts }) => getResults(tabId, opts));
+  handleExecution('script_files', ({ tabId, ...opts }) => getFiles(tabId, opts));
+  handleExecution('script_call', async ({ tabId, wait = true, ...opts }) => {
+    const script = getAliveScript(opts.scriptId);
+    if (!script.config.enabled) throw new ToolCallError(ErrorCode.Denied, 'Script is disabled');
+    if (typeof wait !== 'boolean') throw new ToolCallError(ErrorCode.InvalidParams, 'wait must be boolean');
+    const call = beginCall(tabId, opts);
+    if (call.isNew) {
+      // Do not await transport delivery: the call timeout also covers a missing receiver.
+      Promise.resolve().then(() => browser.tabs.sendMessage(tabId, { cmd: 'McpCall', data: call.message }, {
+        frameId: call.result.frameId,
+      })).then((accepted) => {
+        if (!accepted) failCall(tabId, call.result.callId, 'Script document is no longer available');
+      }, e => failCall(tabId, call.result.callId, e.message || e));
+    }
+    return { result: wait ? await call.promise : call.result };
+  });
   c.handle('scripts_list', ({ query }) => {
     const q = query?.toLocaleLowerCase();
     return {

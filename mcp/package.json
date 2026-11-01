@@ -1,0 +1,22 @@
+{
+  "name": "@automation-script/mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Automation Script MCP server with script invocation and structured results",
+  "scripts": {
+    "start": "node cli.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": { "node": ">=24" },
+  "dependencies": {
+    "@violentmonkey/mcp": "0.1.2",
+    "@violentmonkey/mcp-protocol": "0.1.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "ws": "8.21.0"
+  },
+  "overrides": { "@hono/node-server": "^2.1.4" }
+}

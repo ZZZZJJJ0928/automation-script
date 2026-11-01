@@ -6,6 +6,7 @@ export const kEditAsString = 'editAsString';
 export const kFiltersPopup = 'filtersPopup';
 export const kGmCookieHttpOnly = 'gmCookieHttpOnly';
 export const kGmDownloadViaApi = 'gmDownloadViaApi';
+export const kMcpFileDirectory = 'mcpFileDirectory';
 export const kKillTrailingSpaceOnSave = 'killTrailingSpaceOnSave';
 export const kPageMenuCommands = 'pageMenuCommands';
 export const kPopupWidth = 'popupWidth';
@@ -36,6 +37,7 @@ export default {
   [kUpdateEnabledScriptsOnly]: true,
   [kGmCookieHttpOnly]: false,
   [kGmDownloadViaApi]: false,
+  [kMcpFileDirectory]: 'automation-script',
   [kPageMenuCommands]: false,
   /** @deprecated Kept for backward compatibility; will be removed in the future. */
   autoUpdate: 1,

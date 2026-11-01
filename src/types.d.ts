@@ -27,6 +27,39 @@ declare interface GMContext {
   displayName: string;
 }
 
+declare type McpScriptHandler = (params: PlainJSONValue, context: { callId: string }) => unknown;
+declare function GM_registerMcpHandler(handler: McpScriptHandler): Promise<boolean>;
+declare function GM_reportResult(value: unknown, options?: { callId?: string; error?: string }):
+  Promise<{ accepted: boolean; callId: string }>;
+declare interface McpSaveFileOptions {
+  name: string;
+  /** Subdirectory beneath the browser's Downloads/automation-script directory. */
+  directory?: string;
+  data: Blob | ArrayBuffer | ArrayBufferView | string;
+  mimeType?: string;
+}
+declare interface McpSavedFile {
+  fileId: string;
+  downloadId: number;
+  scriptId: number;
+  frameId: number;
+  name: string;
+  /** Actual absolute path on the browser's machine, including conflict renaming. */
+  path: string;
+  requestedPath: string;
+  size: number;
+  mimeType: string;
+  status: 'completed';
+  savedAt: number;
+}
+declare function GM_saveFile(options: McpSaveFileOptions): Promise<McpSavedFile>;
+declare namespace GM {
+  function registerMcpHandler(handler: McpScriptHandler): Promise<boolean>;
+  function reportResult(value: unknown, options?: { callId?: string; error?: string }):
+    Promise<{ accepted: boolean; callId: string }>;
+  function saveFile(options: McpSaveFileOptions): Promise<McpSavedFile>;
+}
+
 /**
  * GM_xmlhttpRequest paraphernalia
  */
@@ -320,6 +353,8 @@ declare interface VMInjection extends VMInjectionDisabled, VMInjectionFlags {
   /** cache key for envDelayed, which also tells content bridge to expect envDelayed */
   more: string;
   nonce?: string;
+  /** Private per-document token; only sent to the content bridge. */
+  mcpToken?: string;
   /** `page` mode will be necessary */
   page: boolean;
   scripts: VMInjection.Script[];

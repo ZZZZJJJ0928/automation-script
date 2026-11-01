@@ -1343,3 +1343,28 @@ visitWebsite:
   description: Label for link to open Violentmonkey website.
   message: Visit Website
   touched: false
+
+labelMcpFileDirectory:
+  description: File save directory setting
+  message: 'File save directory'
+labelMcpFileDirectoryHint:
+  description: File save directory setting
+  message: 'Relative to your browser’s download location. Use / for subdirectories; leave empty to use the download location itself. Applies to new file saves; scripts may append their own subdirectory.'
+labelMcpFileDirectoryInvalid:
+  description: File save directory setting
+  message: 'Enter a relative directory, such as archives/2026. Absolute paths, .., empty path segments, reserved names and invalid filename characters are not allowed.'
+labelMcpFileDirectoryPreview:
+  description: File save directory setting
+  message: 'Email save example: $1'
+labelMcpFileDirectorySaveError:
+  description: File save directory setting
+  message: 'Could not save the directory. Please try again.'
+labelMcpFileDirectoryWatcher:
+  description: File save directory setting
+  message: 'The local mail collector follows this directory automatically over MCP, usually within a few seconds. Offline services catch up after reconnecting.'
+labelBrowserDownloadDirectory:
+  description: File save directory setting
+  message: 'Browser download location'
+buttonBrowserDownloadSettings:
+  description: File save directory setting
+  message: 'Change browser download location'

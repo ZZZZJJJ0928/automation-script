@@ -16,6 +16,7 @@
     <p>
       <a :href="GUIDE_URL" target="_blank" rel="noopener noreferrer" v-text="i18n('labelMcpGuide')" />
     </p>
+    <VmFileStorage/>
     <div v-if="connected" class="vm-mcp-grant">
       <div class="vm-mcp-head">
         <h4 v-text="i18n('labelMcpGrantTitle')" />
@@ -79,6 +80,7 @@
 import { computed, onActivated, onDeactivated, nextTick, reactive, ref } from 'vue';
 import { i18n, sendCmdDirectly } from '@/common';
 import Icon from '@/common/ui/icon';
+import VmFileStorage from './vm-file-storage';
 
 const GUIDE_URL = 'https://violentmonkey.github.io/guide/ai-agent-access/';
 const $el = ref();

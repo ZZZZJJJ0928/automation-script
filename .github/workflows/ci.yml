@@ -33,6 +33,10 @@ jobs:
 
       - name: Install
         run: pnpm ci
+      - name: Test MCP server
+        run: |
+          npm ci --prefix mcp --ignore-scripts
+          npm test --prefix mcp
       - name: Test & Build
         run: |
           pnpm exec run-p ci build

@@ -1284,3 +1284,28 @@ visitWebsite:
   description: Label for link to open Violentmonkey website.
   message: 瀏覽網站
   touched: false
+
+labelMcpFileDirectory:
+  description: File save directory setting
+  message: '檔案儲存目錄'
+labelMcpFileDirectoryHint:
+  description: File save directory setting
+  message: '相對於瀏覽器的下載位置，使用 / 分隔多層目錄；留空表示直接使用下載位置。儲存後對新檔案生效，腳本指定的子目錄會接在後面。'
+labelMcpFileDirectoryInvalid:
+  description: File save directory setting
+  message: '請輸入相對目錄，例如 郵件封存/2026。不支援絕對路徑、..、空目錄段、系統保留名稱及檔名無效字元。'
+labelMcpFileDirectoryPreview:
+  description: File save directory setting
+  message: '郵件儲存範例：$1'
+labelMcpFileDirectorySaveError:
+  description: File save directory setting
+  message: '儲存目錄失敗，請重試。'
+labelMcpFileDirectoryWatcher:
+  description: File save directory setting
+  message: '郵件採集台透過本機 MCP 自動同步儲存目錄，通常幾秒內生效；服務暫時離線時會在恢復連線後補同步。'
+labelBrowserDownloadDirectory:
+  description: File save directory setting
+  message: '瀏覽器下載位置'
+buttonBrowserDownloadSettings:
+  description: File save directory setting
+  message: '變更瀏覽器下載位置'

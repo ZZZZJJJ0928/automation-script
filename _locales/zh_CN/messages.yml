@@ -1284,3 +1284,28 @@ visitWebsite:
   description: Label for link to open Violentmonkey website.
   message: 访问网站
   touched: false
+
+labelMcpFileDirectory:
+  description: File save directory setting
+  message: '文件保存目录'
+labelMcpFileDirectoryHint:
+  description: File save directory setting
+  message: '相对于浏览器的下载位置，使用 / 分隔多级目录；留空表示直接使用下载位置。保存后对新文件生效，脚本指定的子目录会追加在后面。'
+labelMcpFileDirectoryInvalid:
+  description: File save directory setting
+  message: '请输入相对目录，例如 邮件归档/2026。不支持绝对路径、..、空目录段、系统保留名称及文件名非法字符。'
+labelMcpFileDirectoryPreview:
+  description: File save directory setting
+  message: '邮件保存示例：$1'
+labelMcpFileDirectorySaveError:
+  description: File save directory setting
+  message: '保存目录失败，请重试。'
+labelMcpFileDirectoryWatcher:
+  description: File save directory setting
+  message: '邮件采集台通过本地 MCP 自动同步保存目录，通常几秒内生效；服务暂时离线时会在恢复连接后补同步。'
+labelBrowserDownloadDirectory:
+  description: File save directory setting
+  message: '浏览器下载位置'
+buttonBrowserDownloadSettings:
+  description: File save directory setting
+  message: '更改浏览器下载位置'

@@ -1,7 +1,8 @@
 import { compareVersion, debounce, initHooks, normalizeKeys } from '@/common';
 import { deepCopy, deepEqual, objectGet, objectSet } from '@/common/object';
-import defaults, { kScriptTemplate, kUpdateCron } from '@/common/options-defaults';
+import defaults, { kMcpFileDirectory, kScriptTemplate, kUpdateCron } from '@/common/options-defaults';
 import { migrateAutoUpdate, normalizeUpdateCron } from '@/common/cron';
+import { validateFileDirectory } from '@/common/file-path';
 import broadcast from './broadcast';
 import { addOwnCommands, init, initDependency } from './init';
 import storage from './storage';
@@ -124,6 +125,7 @@ export function setOption(key, value, silent) {
   const mainKey = keys[0];
   key = keys.join('.'); // must be a string for addChange()
   if (key === kUpdateCron) value = normalizeUpdateCron(value);
+  if (key === kMcpFileDirectory) value = validateFileDirectory(value);
   if (!hasOwnProperty(defaults, mainKey)) {
     if (__.DEBUG) console.info('Unknown option:', key, value, options);
     return;
