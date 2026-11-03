@@ -27,18 +27,30 @@ declare interface GMContext {
   displayName: string;
 }
 
-declare type McpScriptHandler = (params: PlainJSONValue, context: { callId: string }) => unknown;
-declare function GM_registerMcpHandler(handler: McpScriptHandler): Promise<boolean>;
-declare function GM_reportResult(value: unknown, options?: { callId?: string; error?: string }):
-  Promise<{ accepted: boolean; callId: string }>;
-declare interface McpSaveFileOptions {
+declare type GMMcpReport = (value: unknown, options?: { error?: string }) => Promise<void>;
+declare interface GMMcpHandler {
+  description?: string;
+  /** JSON Schema shown to the agent as a hint; the handler validates its own params. */
+  inputSchema?: { [key: string]: PlainJSONValue };
+  /** Settles the call with its return value or thrown error. */
+  handle(call: { params: PlainJSONValue; report: GMMcpReport }): unknown;
+}
+declare interface GMMcp {
+  /** Merges handlers by name. Resolves to a function that removes the handlers it added. */
+  register(handlers: { [name: string]: GMMcpHandler }): Promise<() => Promise<void>>;
+  /** Reports a result that is not tied to a call. */
+  report: GMMcpReport;
+  /** Saves into the browser's download directory, under the directory set in extension settings. */
+  saveFile(options: GMMcpSaveFileOptions): Promise<GMMcpSavedFile>;
+}
+declare interface GMMcpSaveFileOptions {
   name: string;
-  /** Subdirectory beneath the browser's Downloads/automation-script directory. */
+  /** Subdirectory beneath the configured directory. */
   directory?: string;
   data: Blob | ArrayBuffer | ArrayBufferView | string;
   mimeType?: string;
 }
-declare interface McpSavedFile {
+declare interface GMMcpSavedFile {
   fileId: string;
   downloadId: number;
   scriptId: number;
@@ -52,12 +64,9 @@ declare interface McpSavedFile {
   status: 'completed';
   savedAt: number;
 }
-declare function GM_saveFile(options: McpSaveFileOptions): Promise<McpSavedFile>;
+declare const GM_mcp: GMMcp;
 declare namespace GM {
-  function registerMcpHandler(handler: McpScriptHandler): Promise<boolean>;
-  function reportResult(value: unknown, options?: { callId?: string; error?: string }):
-    Promise<{ accepted: boolean; callId: string }>;
-  function saveFile(options: McpSaveFileOptions): Promise<McpSavedFile>;
+  const mcp: GMMcp;
 }
 
 /**
@@ -353,8 +362,9 @@ declare interface VMInjection extends VMInjectionDisabled, VMInjectionFlags {
   /** cache key for envDelayed, which also tells content bridge to expect envDelayed */
   more: string;
   nonce?: string;
-  /** Private per-document token; only sent to the content bridge. */
-  mcpToken?: string;
+  /** Private per-document MCP channel, only sent to the content bridge.
+   * sessionId and pageId restore it after BFCache. */
+  mcp?: { token: string; sessionId: string; pageId: string };
   /** `page` mode will be necessary */
   page: boolean;
   scripts: VMInjection.Script[];

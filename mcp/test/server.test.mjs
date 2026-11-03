@@ -6,9 +6,12 @@ import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 import { Session } from '@violentmonkey/mcp';
 import WebSocket from 'ws';
-import { executionTools, startServer } from '../server.mjs';
+import { fileTools, startServer } from '../server.mjs';
 
-test('MCP discovery and real HTTP/WebSocket transport preserve structured call results', async t => {
+const executionTools = ['script_handlers', 'script_call', 'script_results'];
+const extensionTools = [...executionTools, ...Object.keys(fileTools)];
+
+test('MCP discovery and real HTTP/WebSocket transport preserve calls, reports and files', async t => {
   const portProbe = createServer();
   portProbe.listen(0, '127.0.0.1');
   await once(portProbe, 'listening');
@@ -22,9 +25,9 @@ test('MCP discovery and real HTTP/WebSocket transport preserve structured call r
   await once(ws, 'open');
   const ready = once(ws, 'message');
   ws.send(JSON.stringify({
-    type: 'hello', protocol: 1, token, client: { name: 'test', version: '1' }, tools: Object.keys(executionTools),
+    type: 'hello', protocol: 1, token, client: { name: 'test', version: '1' }, tools: extensionTools,
   }));
-  assert.deepEqual(JSON.parse((await ready)[0]).tools.sort(), Object.keys(executionTools).sort());
+  assert.deepEqual(JSON.parse((await ready)[0]).tools.sort(), [...extensionTools].sort());
   const received = [];
   const file = {
     fileId: 'file-1', downloadId: 42, scriptId: 1, frameId: 0, name: 'report.pdf',
@@ -32,18 +35,23 @@ test('MCP discovery and real HTTP/WebSocket transport preserve structured call r
     size: 3, mimeType: 'application/pdf', status: 'completed', savedAt: Date.now(),
   };
   const result = {
-    callId: 'call-1', scriptId: 1, frameId: 0, documentId: 'doc-1',
+    kind: 'call', callId: 'call-1', handler: 'export', scriptId: 1, frameId: 0, documentId: 'doc-1',
     seq: 2, status: 'completed', startedAt: Date.now(), value: { rows: [0, false, null, ''], file },
   };
+  const report = {
+    kind: 'report', callId: 'call-1', scriptId: 1, frameId: 0, documentId: 'doc-1',
+    seq: 3, reportedAt: Date.now(), value: { progress: 1 },
+  };
+  const scripts = [{ scriptId: 1, frameId: 0, handlers: [{ name: 'export', description: 'Exports mail' }] }];
   ws.on('message', raw => {
     const msg = JSON.parse(raw);
     if (msg.type !== 'call') return;
     received.push(msg);
     const data = msg.tool === 'file_storage' ? { directory: '邮件归档/2026', downloadDirectory: '/Downloads' }
       : msg.tool === 'script_call' ? { result }
-      : msg.tool === 'script_handlers' ? { handlers: [{ scriptId: 1, frameId: 0 }] }
+      : msg.tool === 'script_handlers' ? { scripts }
         : msg.tool === 'script_files' ? { files: [file] }
-        : { entries: [result], nextSeq: 2, dropped: 0 };
+        : { entries: [result, report], nextSeq: 3, dropped: 0 };
     ws.send(JSON.stringify({ type: 'result', id: msg.id, ok: true, data }));
   });
   const client = new Client({ name: 'test-agent', version: '1' });
@@ -52,26 +60,30 @@ test('MCP discovery and real HTTP/WebSocket transport preserve structured call r
     requestInit: { headers: { Authorization: `Bearer ${token}` } },
   }));
   const listing = await client.listTools();
-  for (const name of Object.keys(executionTools)) assert.ok(listing.tools.some(tool => tool.name === name));
+  for (const name of extensionTools) assert.ok(listing.tools.some(tool => tool.name === name));
+  const handlers = await client.callTool({ name: 'script_handlers', arguments: { tabId: 7 } });
+  assert.deepEqual(handlers.structuredContent, { scripts });
   const response = await client.callTool({ name: 'script_call', arguments: {
-    tabId: 7, scriptId: 1, callId: 'call-1', params: { a: 2 },
+    tabId: 7, scriptId: 1, handler: 'export', callId: 'call-1', params: { a: 2 },
   } });
   assert.deepEqual(response.structuredContent, { result });
-  assert.deepEqual(received[0].params, {
-    tabId: 7, scriptId: 1, frameId: 0, callId: 'call-1', params: { a: 2 }, wait: true, timeoutMs: 10000,
+  assert.deepEqual(received.at(-1).params, {
+    tabId: 7, scriptId: 1, frameId: 0, handler: 'export', callId: 'call-1', params: { a: 2 }, wait: true, timeoutMs: 10000,
   });
   const read = await client.callTool({ name: 'script_results', arguments: { tabId: 7, callId: 'call-1' } });
-  assert.deepEqual(read.structuredContent.entries, [result]);
+  assert.deepEqual(read.structuredContent.entries, [result, report]);
   const files = await client.callTool({ name: 'script_files', arguments: { tabId: 7, fileId: 'file-1' } });
   assert.deepEqual(files.structuredContent, { files: [file] });
   assert.deepEqual(received.at(-1).params, { tabId: 7, fileId: 'file-1', limit: 50 });
   const config = await client.callTool({ name: 'file_storage', arguments: {} });
   assert.deepEqual(config.structuredContent, { directory: '邮件归档/2026', downloadDirectory: '/Downloads' });
-  const invalid = await client.callTool({ name: 'script_call', arguments: { tabId: 7, scriptId: 1, timeoutMs: 99999 } });
-  assert.equal(invalid.isError, true);
+  for (const args of [{ handler: 'export', timeoutMs: 99999 }, {}]) {
+    const invalid = await client.callTool({ name: 'script_call', arguments: { tabId: 7, scriptId: 1, ...args } });
+    assert.equal(invalid.isError, true);
+  }
 });
 
-test('read-only mode denies script execution while permitting result reads', () => {
+test('read-only mode denies script execution while permitting result and file reads', () => {
   const session = new Session({ token: 'test', server: { name: 'test', version: '1' }, readonly: true });
   assert.equal(session.isAllowed('script_call'), false);
   assert.equal(session.isAllowed('script_results'), true);

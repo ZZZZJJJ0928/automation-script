@@ -59,11 +59,11 @@ pnpm run ci
 
 ## MCP 脚本调用与返回结果
 
-扩展支持 `GM_registerMcpHandler` 注册可调用入口，MCP 通过 `script_call` 传参并取得同步或异步结果。`GM_reportResult` 可主动上报结构化结果，`script_results` 可按调用 ID 查询，支持并发关联、异常、超时和迟到结果。
+扩展提供上游已合并的 `GM.mcp`（`@grant GM.mcp` 或 `GM_mcp`）：脚本用 `GM.mcp.register({ 名称: { description, inputSchema, handle } })` 注册具名入口，MCP 通过 `script_handlers` 发现入口及其说明，用 `script_call` 按名称传参调用，取得同步或异步结果。入口收到的 `report` 绑定到本次调用，可在调用结束前后追加上报；`GM.mcp.report` 可主动上报与调用无关的结果。`script_results` 可按调用 ID 查询调用及其上报，支持并发关联、异常、超时和迟到结果。
 
-脚本取得下载内容后，可用 `await GM_saveFile({ name, data, directory })` 让扩展保存到浏览器下载目录下的可配置目录（默认 `automation-script/`，在「设置 → MCP → 文件保存目录」修改；`directory` 为追加的脚本子目录）。保存完成后返回 `fileId`、实际绝对路径 `path`、字节数 `size`、MIME 类型等信息；MCP 可通过 `script_files` 查询。支持 Blob、ArrayBuffer、TypedArray 和文本，单文件最多 16 MiB。
+本分支额外提供 `GM.mcp.saveFile({ name, data, directory })`：脚本取得下载内容后，可让扩展保存到浏览器下载目录下的可配置目录（默认 `automation-script/`，在「设置 → MCP → 文件保存目录」修改；`directory` 为追加的脚本子目录）。保存完成后返回 `fileId`、实际绝对路径 `path`、字节数 `size`、MIME 类型等信息；MCP 可通过 `script_files` 查询。支持 Blob、ArrayBuffer、TypedArray 和文本，单文件最多 16 MB。
 
-需要同时使用本仓库的 [MCP 服务端与接入说明](./mcp/README.md)，并在扩展设置中授权目标标签页后刷新页面。原版上游服务端不会暴露新增工具。
+需要同时使用本仓库的 [MCP 服务端与接入说明](./mcp/README.md)，并在扩展设置中授权目标标签页后刷新页面。上游 `@violentmonkey/mcp` 0.2.0 起已包含 `script_*` 调用工具，但不包含本分支的 `script_files` 和 `file_storage`。
 
 ## 上游兼容性
 

@@ -1,6 +1,8 @@
 import browser from '@/common/browser';
+import { keepAlive } from '@/common';
 import { getOption } from '@/background/utils/options';
 
+jest.mock('@/common', () => ({ ...jest.requireActual('@/common'), keepAlive: jest.fn() }));
 jest.mock('@/background/utils/options', () => ({ getOption: jest.fn() }));
 import { MCP_FILE_MAX } from '@/common/consts';
 import { clearFiles, dropFileTab, FILE_SAVE_TIMEOUT, getFiles, getFileStorage, saveMcpFile } from '@/background/utils/mcp-files';
@@ -86,6 +88,20 @@ test('waits for disk completion and returns the actual renamed path and size', a
   expect(getFiles(7, { fileId: file.fileId }).files).toEqual([file]);
   file.path = 'mutated';
   expect(getFiles(7).files[0].path).not.toBe('mutated');
+});
+
+test('MV3 keeps the worker alive until the save settles', async () => {
+  let promise;
+  __.MV3 = true;
+  try {
+    promise = saveMcpFile(7, 0, data, authorize);
+  } finally {
+    delete __.MV3;
+  }
+  expect(keepAlive).toHaveBeenCalledWith(promise);
+  await flush();
+  complete(1);
+  await promise;
 });
 
 test('handles completion before download() returns its id, and empty files', async () => {

@@ -1,4 +1,5 @@
 import browser from '@/common/browser';
+import { keepAlive } from '@/common';
 import { MCP_FILE_MAX } from '@/common/consts';
 import { validateFileDirectory, validateFileName } from '@/common/file-path';
 import { kMcpFileDirectory } from '@/common/options-defaults';
@@ -20,7 +21,7 @@ function validate({ name, directory = '', dataUrl }) {
   const root = validateFileDirectory(getOption(kMcpFileDirectory));
   const filename = [root, validateFileDirectory(directory), validateFileName(name)].filter(Boolean).join('/');
   if (typeof dataUrl !== 'string' || dataUrl.length > Math.ceil(MCP_FILE_MAX / 3) * 4 + 280) {
-    invalid('File exceeds 16 MiB or has invalid data');
+    invalid('File exceeds 16 MB or has invalid data');
   }
   const comma = dataUrl.indexOf(',');
   if (comma < 0 || comma > 275 || !/^data:[\x20-\x7e]*;base64$/.test(dataUrl.slice(0, comma))) {
@@ -29,7 +30,7 @@ function validate({ name, directory = '', dataUrl }) {
   const base64 = dataUrl.slice(comma + 1);
   if (base64.length % 4 || !/^[A-Za-z0-9+/]*={0,2}$/.test(base64)) invalid('Invalid base64 file data');
   const size = base64.length / 4 * 3 - (base64.endsWith('==') ? 2 : base64.endsWith('=') ? 1 : 0);
-  if (size > MCP_FILE_MAX) invalid('File exceeds 16 MiB');
+  if (size > MCP_FILE_MAX) invalid('File exceeds 16 MB');
   return { filename, size, mimeType: dataUrl.slice(5, comma - 7) || 'application/octet-stream' };
 }
 
@@ -76,7 +77,7 @@ export function saveMcpFile(tabId, frameId, data, authorize) {
   const { filename, size, mimeType } = validate(data);
   if (pending.size >= PENDING_MAX) invalid('Too many pending file saves (maximum 4)');
   const fileId = crypto.randomUUID();
-  return new Promise((resolve, reject) => {
+  const saving = new Promise((resolve, reject) => {
     let downloadId;
     let done = false;
     const cancelDownload = () => {
@@ -151,6 +152,9 @@ export function saveMcpFile(tabId, frameId, data, authorize) {
       else query();
     }, error => finish(error));
   });
+  // The download may take longer than an idle MV3 service worker lives.
+  if (__.MV3) keepAlive(saving);
+  return saving;
 }
 
 export function getFiles(tabId, { scriptId, fileId, limit = 50 } = {}) {

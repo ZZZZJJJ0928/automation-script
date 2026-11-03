@@ -22,12 +22,12 @@ export async function encodeMcpFile({ id, name, directory, data, mimeType }) {
       }
     }
     if (isString(data) && data.length > MCP_FILE_MAX) {
-      throw new SafeError('File exceeds 16 MiB');
+      throw new SafeError('File exceeds 16 MB');
     }
     data = new SafeBlob([data]);
     size = data::getSize();
   }
-  if (size > MCP_FILE_MAX) throw new SafeError('File exceeds 16 MiB');
+  if (size > MCP_FILE_MAX) throw new SafeError('File exceeds 16 MB');
   if (mimeType != null && !isString(mimeType)) throw new SafeError('mimeType must be a string');
   type = mimeType || type || 'application/octet-stream';
   if (type.length > 255) throw new SafeError('mimeType is too long');

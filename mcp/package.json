@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Automation Script MCP server with script invocation and structured results",
+  "description": "Automation Script MCP server: upstream Violentmonkey MCP plus file saving tools",
   "scripts": {
     "start": "node cli.mjs",
     "test": "node --test test/*.test.mjs"
   },
   "engines": { "node": ">=24" },
   "dependencies": {
-    "@violentmonkey/mcp": "0.1.2",
-    "@violentmonkey/mcp-protocol": "0.1.2",
+    "@violentmonkey/mcp": "0.2.0",
+    "@violentmonkey/mcp-protocol": "0.2.0",
     "zod": "4.6.7"
   },
   "devDependencies": {

@@ -2,39 +2,91 @@ import * as bridge from './bridge';
 import { sendCmd } from './util';
 import { encodeMcpFile } from './mcp-files';
 
-let token;
+/** @type {VMInjection['mcp']} */
+let mcp;
 let ready;
-export const setMcpToken = response => {
-  ready = response::then(data => { token = data?.mcpToken; }, () => {});
+/** Handler metadata by script id and name, resent when restored from BFCache */
+let registered;
+export const setMcp = response => {
+  registered = createNullObj();
+  ready = response::then(data => {
+    mcp = data?.mcp;
+  });
 };
+
+/** Called only for a trusted persisted pageshow, without rerunning userscript code. */
+export function restoreMcp() {
+  const previous = ready;
+  ready = (async () => {
+    await previous;
+    if (!mcp) return;
+    const { sessionId, pageId } = mcp;
+    mcp = null;
+    try {
+      const { token } = await sendCmd('McpRestoreDocument', {
+        sessionId,
+        pageId,
+        scripts: objectKeys(registered)::map(id => {
+          const own = registered[id];
+          return {
+            id: +id,
+            handlers: objectKeys(own)::map(name => own[name]),
+          };
+        }),
+      });
+      mcp = { token, sessionId, pageId };
+    } catch {
+      // Revoked grants and disconnected sessions require an explicit reload.
+    }
+  })();
+  return ready;
+}
 
 async function authorize(data, realm) {
   await ready;
-  if (!token || bridge.ids[data.id] !== realm) {
-    throw new Error('MCP result channel unavailable; grant this tab and reload it');
+  if (!mcp || bridge.ids[data.id] !== realm) {
+    throw new Error('MCP channel unavailable; grant this tab and reload it');
   }
 }
 
 async function relay(cmd, data, realm) {
   await authorize(data, realm);
-  return sendCmd(cmd, { ...data, token });
+  return sendCmd(cmd, { ...data, token: mcp.token });
 }
 
 bridge.addHandlers({
-  RegisterMcpHandler: (data, realm) => relay('RegisterMcpHandler', data, realm),
-  ScriptResult: (data, realm) => relay('ScriptResult', data, realm),
+  async McpRegister(data, realm) {
+    const res = await relay('McpRegister', data, realm);
+    const own = registered[data.id] ||= createNullObj();
+    data.handlers::forEach(h => { own[h.name] = h; });
+    return res;
+  },
+  async McpUnregister(data, realm) {
+    const res = await relay('McpUnregister', data, realm);
+    const own = registered[data.id];
+    if (own) {
+      data.names::forEach(name => { delete own[name]; });
+      if (!objectKeys(own).length) delete registered[data.id];
+    }
+    return res;
+  },
+  McpReport: (data, realm) => relay('McpReport', data, realm),
+  McpReturn: (data, realm) => relay('McpReturn', data, realm),
   async McpSaveFile(data, realm) {
+    // Checked before reading the file, which may be large.
     await authorize(data, realm);
-    const encoded = await encodeMcpFile(data);
-    return relay('McpSaveFile', encoded, realm);
+    return relay('McpSaveFile', await encodeMcpFile(data), realm);
   },
 });
 
 bridge.addBackgroundHandlers({
-  McpCall(data) {
-    const realm = bridge.ids[data.id];
-    if (!token || data.token !== token || realm !== PAGE && realm !== CONTENT) return false;
-    bridge.post('McpCall', { id: data.id, callId: data.callId, params: data.params }, realm);
+  async McpCall({ id, token, args }) {
+    await ready;
+    // `ids` also marks scripts that didn't run here (ID_BAD_REALM, ID_INJECTING),
+    // so only a real realm can receive the call.
+    const realm = bridge.ids[id];
+    if (!mcp || token !== mcp.token || realm !== PAGE && realm !== CONTENT) return false;
+    bridge.post('McpCall', { id, args }, realm);
     return true;
   },
 }, true);

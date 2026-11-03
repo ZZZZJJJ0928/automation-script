@@ -18,8 +18,8 @@ test.each([undefined, null, {}, 5, ['not', 'bytes']])('rejects unsupported file 
 });
 
 test('rejects files above the byte limit, including multibyte text', async () => {
-  await expect(encodeMcpFile({ data: new Uint8Array(MCP_FILE_MAX + 1) })).rejects.toThrow(/16 MiB/);
-  await expect(encodeMcpFile({ data: '中'.repeat(Math.ceil(MCP_FILE_MAX / 3)) })).rejects.toThrow(/16 MiB/);
+  await expect(encodeMcpFile({ data: new Uint8Array(MCP_FILE_MAX + 1) })).rejects.toThrow(/16 MB/);
+  await expect(encodeMcpFile({ data: '中'.repeat(Math.ceil(MCP_FILE_MAX / 3)) })).rejects.toThrow(/16 MB/);
 });
 
 test('preserves blob MIME type and supports an explicit override', async () => {
